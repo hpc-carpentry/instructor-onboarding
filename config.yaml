@@ -15,32 +15,32 @@
 carpentry: 'incubator'
 
 # Alt-text description of the lesson.
-carpentry_description: 'Lesson Description'
+carpentry_description: 'How (and why) to teach an HPC Carpentry workshop'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Instructor Onboarding for HPC Carpentry'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: ~ # FIXME
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries' # FIXME
+keywords: 'hpc, setup, The Carpentries'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'pre-alpha' # FIXME
+life_cycle: 'stable'
 
 # License of the lesson
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/hpc-carpentry/instructor-onboarding'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'team@carpentries.org'
 
 # Navigation ------------------------------------------------
 #
@@ -66,7 +66,12 @@ contact: 'team@carpentries.org' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
+- 01-introduction.md  # purpose and setup roadmap
+- 02-curriculum.md    # lesson program roadmap
+- 03-amdahl.md        # about the dummy code
+- 04-pre-workshop.md  # how to prepare for a workshop
+- 05-forking.md       # how best to retrieve lesson materials
+- 06-localization.md  # how to tear down a workshop
 
 # Information for Learners
 learners: 
