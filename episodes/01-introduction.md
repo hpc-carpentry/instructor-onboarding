@@ -1,39 +1,36 @@
 ---
-title: "Using Markdown"
-teaching: 10 # teaching time in minutes
+title: "Customizing HPC Carpentry Material"
+teaching: 50 # teaching time in minutes
 exercises: 2 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using Markdown and `{sandpaper}`?
+- Where are the files I need to edit?
+- What parameters should I set?
+- What might my cluster's admins help me with?
+- When should I make a new snippet? How?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with The Carpentries Workbench
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Explain how to customize the site for your cluster
+- Instruct how to build and serve the site
+- Demonstrate how to include pieces of code, output, and custom teaching material
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ## Introduction
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.html) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+Every compute cluster is a little different, and HPC Carpentry works
+best when the lesson materials reflect those differences.
+We use the Workbench built-in tools and R Markdown to render this
+customizxed content, structured with maintainability in mind.
+We want to support edits without breaking synchronization with the
+upstream repositories: you have good ideas, and we want to incorporate
+better preactices!
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson:
-
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
