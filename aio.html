@@ -259,7 +259,7 @@
 <div class="accordion accordion-flush" id="accordionFlush4">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading4">
-        <a href="03-amdahl.html">3. HPC Carpentry: Amdahl</a>
+        <a href="03-amdahl.html">3. Workshop Narrative: the <em>Amdahl</em> Executable</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -430,7 +430,7 @@ you have good ideas, and we want to incorporate better preactices!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -459,7 +459,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -562,7 +562,7 @@ use? What do we cover, and intentionally <em>not</em> cover?</p>
 
 </div>
 </div>
-</div></section><section id="aio-03-amdahl"><p>Content from <a href="03-amdahl.html">HPC Carpentry: Amdahl</a></p>
+</div></section><section id="aio-03-amdahl"><p>Content from <a href="03-amdahl.html">Workshop Narrative: the Amdahl Executable</a></p>
 <hr>
 <p>Last updated on 2026-02-20 |
 
@@ -578,7 +578,8 @@ use? What do we cover, and intentionally <em>not</em> cover?</p>
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>What is <code>amdahl</code>?</li>
+<li>What is the central example in an HPC Carpentry workshop?</li>
+<li>What does the <em>Amdahl</em> program do?</li>
 <li>Why do we need <code>amdahl</code> when there are lots of parallel
 applications out there?</li>
 <li>How do I install the <strong>amdahl</strong> package?</li>
@@ -590,11 +591,12 @@ applications out there?</li>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
+<p>After this episode, Instructors will be able to…</p>
 <ul>
-<li>Explain what <code>amdahl</code> does</li>
-<li>Describe options for installing <code>amdahl</code>
-</li>
-<li>Explain how to launch <code>amdahl</code> and learn more</li>
+<li>Describe the story we tell to guide learners through an HPC
+Carpentry workshop.</li>
+<li>Describe what the <em>Amdahl</em> executable does.</li>
+<li>Install the <em>Amdahl</em> executable.</li>
 </ul>
 </div>
 </div>
@@ -609,15 +611,19 @@ applications out there?</li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
+<li>HPC Carpentry workshops are centered on an exploration of Amdahl’s
+law of scaling, illustrating the diminishing gains of increasingly
+parallelisation.</li>
 <li>
-<code>amdahl</code> is a Python library that emulates a cluster
-application</li>
+<em>Amdahl</em> is a Python executable that runs for a specified
+amount of time but does nothing else.</li>
 <li>
 <code>amdahl</code> is in the Python package index
 (<code>pip install amdahl</code>) as well as the EESSI virtual
 filesystem</li>
 <li>
-<code>amdahl</code> depends on a functional MPI installation!</li>
+<code>amdahl</code> depends on <code>mpi4py</code> and a working MPI
+installation!</li>
 </ul>
 </div>
 </div>
