@@ -83,9 +83,10 @@ degree of parallelism to use.
 
 Then, what it actually does is sleep (go into a wait state)
 for the amount of serial run-time that has been inferred from
-the arguments, and then launch a number of MPI ranks equal
-to the value of the `-np` argument, each of which sleeps 
-for an amount of time equal to the parallel portion of the
+the arguments. MPI jobs have a number of parallel processes,
+called "rnaks", equial to the value of the `-np` argument. 
+After the serial sleep process completes, each of these ranks
+also sleeps for an amount of time equal to the parallel
 run-time divided by the number of ranks.
 
 By default, the program adds a certain amount of jitter to
