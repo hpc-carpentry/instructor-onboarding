@@ -564,7 +564,7 @@ use? What do we cover, and intentionally <em>not</em> cover?</p>
 </div>
 </div></section><section id="aio-03-amdahl"><p>Content from <a href="03-amdahl.html">Workshop Narrative: the Amdahl Executable</a></p>
 <hr>
-<p>Last updated on 2026-02-20 |
+<p>Last updated on 2026-02-25 |
 
         <a href="https://github.com/hpc-carpentry/instructor-onboarding/edit/main/episodes/03-amdahl.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -603,6 +603,89 @@ Carpentry workshop.</li>
 </div>
 </div>
 </div>
+<section><h2 class="section-heading" id="amdahls-law">Amdahl’s Law<a class="anchor" aria-label="anchor" href="#amdahls-law"></a>
+</h2>
+<hr class="half-width">
+<p><a href="https://en.wikipedia.org/wiki/Amdahl%27s_law" class="external-link">Amdahl’s
+Law</a> is an important idealization in the field of parallel computing.
+Generally speaking, the purpose of parallelizing a program is to spread
+the computational work across multiple processing units to increase
+performance.</p>
+<p>In <a href="https://en.wikipedia.org/wiki/Scalability#Weak_versus_strong_scaling" class="external-link">strong
+scaling</a>, the success of parallelization scheme is measured by the
+speed-up, which is to say, the ratio of the amount of time it takes to
+complete the task with no parallelization, to the amount of time it
+takes with some degree of parallelization <span class="math inline">\(n\)</span>.</p>
+<p>If the program parallelizes perfectly, then this speedup is simply
+<span class="math inline">\(1/n\)</span>.</p>
+<p>Amdahl’s law describes how this applies to the simplest non-ideal
+program. It assumes that only some fraction of the code can be
+parallelized perfectly (the “parallel part”), and that a fixed fraction
+of the code is intrinsically serial. In real-world codes, the serial
+part might involve problem set-up or tear-down, or data aggregation
+steps that integrate the resulsts of the parallel tasks.</p>
+<p>In this case, there are diminishing returns to increasing the degree
+of parallelization, and after a point, developer effort is better
+invested in other performance strategies, such as speeding up the serial
+part of the program, or selecting a better algorithm.</p>
+<p>In the HPC Intro lesson, the law is derived, and is written as <span class="math inline">\(T(n) = (1-p)T + (p/n)T\)</span>, where <span class="math inline">\(T\)</span> is the serial run-time of the program,
+<span class="math inline">\(p\)</span> is the parallel fraction of the
+program, and <span class="math inline">\(n\)</span>” is the degree of
+parallelism. It’s clear by inspection of the equation that as <span class="math inline">\(n\)</span> becomes large, <span class="math inline">\(T(n)\)</span> becomes approximately equal to the
+duration of the serial part, <span class="math inline">\((1-p)T\)</span>, and increases in <span class="math inline">\(n\)</span> only have a small effect on the
+runtime.</p>
+<p>The “speedup” for a given degree of parallelization <span class="math inline">\(n\)</span> is <span class="math inline">\(T(1)/T(n)\)</span>.</p>
+</section><section><h2 class="section-heading" id="the-amdahls-law-executable">The Amdahl’s Law Executable<a class="anchor" aria-label="anchor" href="#the-amdahls-law-executable"></a>
+</h2>
+<hr class="half-width">
+<p>The HPC Carpentry development team has provided an executable, called
+<code>amdahl</code>, that illustrates this law at low computational
+cost, and is easy to run even on very small educational clusters.</p>
+<p>The program divides a fixed amount of execution time (given in
+seconds by an argument, <code>-w</code>, which defaults to 30 seconds)
+into a parallel fraction (given by another argument <code>-p</code>,
+which defaults to 0.8) and a serial fraction (equal to <span class="math inline">\(1-p\)</span>, inferred from the <code>-p</code>
+argument).</p>
+<p>The program takes another argument, <code>-np</code>, which tells it
+the degree of parallelism to use.</p>
+<p>Then, what it actually does is sleep (go into a wait state) for the
+amount of serial run-time that has been inferred from the arguments. MPI
+jobs have a number of parallel processes, called “rnaks”, equial to the
+value of the <code>-np</code> argument. After the serial sleep process
+completes, each of these ranks also sleeps for an amount of time equal
+to the parallel run-time divided by the number of ranks.</p>
+<p>By default, the program adds a certain amount of jitter to the
+results, so that they don’t necessarily exactly lie on the Amdahl’s law
+curve. The amount of jitter can be set (as a fraction of the total
+run-time) by the <code>-j</code> argument, or disabled entirely with the
+<code>-e</code> (for “exact”) argument.</p>
+<p>The program then outputs the number of ranks and the duration of the
+run-time. Depending on the <code>-t</code> flag (for “terse”), the
+output is either human-readable plain text (the non-terse case) or a bit
+of JSON suitable for machine ingestion.</p>
+<p>The expectation is that learners will use the non-terse output
+initially in HPC Intro, to get a feel for the diminishing returns of
+parallelization, and then use the JSON output format to do an automated
+scaling study and create a plot in the HPC Workflows lesson.</p>
+</section><section><h2 class="section-heading" id="obtaining-the-amdahl-code">Obtaining the Amdahl Code<a class="anchor" aria-label="anchor" href="#obtaining-the-amdahl-code"></a>
+</h2>
+<hr class="half-width">
+<p>The source code is available on <a href="https://github.com/hpc-carpentry/amdahl" class="external-link">a repository</a> on the
+HPC Carpentry’s GitHub project. It’s a Python code written to use the
+parallel Message Passing Interface library, which is a dependency of
+it.</p>
+<p>It is also registered with the Python package index, PyPI, and so can
+be installed via <code>pip</code>.</p>
+<p>Alternatively, if your cluster uses the EESSI software suite, the
+Python Amdahl code is available there also.</p>
+<p>For clusters where users are unable to download files from the
+internet, it’s possible to download the <code>pip</code> package and
+install it directly. TODO: Is this true?</p>
+<p>Whichever scheme is used to install it, the installation should take
+place in an environment where the <code>mpi4py</code> Python
+functionality is available. This may be available by default on your
+cluster, or you may need to load some combination of Python and MPI
+modules for it to be available.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -627,7 +710,12 @@ installation!</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-04-pre-workshop"><p>Content from <a href="04-pre-workshop.html">HPC Carpentry Curriculum</a></p>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-04-pre-workshop"><p>Content from <a href="04-pre-workshop.html">HPC Carpentry Curriculum</a></p>
 <hr>
 <p>Last updated on 2026-02-25 |
 
