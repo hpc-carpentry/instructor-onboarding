@@ -271,7 +271,7 @@
 <div class="accordion accordion-flush" id="accordionFlush5">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
-        <a href="04-pre-workshop.html">4. HPC Carpentry Curriculum</a>
+        <a href="04-pre-workshop.html">4. The Pre-Workshop Checklists</a>
     </div>
 <!--/div.accordion-header-->
 
@@ -811,9 +811,9 @@ installation!</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
-</section></section><section id="aio-04-pre-workshop"><p>Content from <a href="04-pre-workshop.html">HPC Carpentry Curriculum</a></p>
+</section></section><section id="aio-04-pre-workshop"><p>Content from <a href="04-pre-workshop.html">The Pre-Workshop Checklists</a></p>
 <hr>
-<p>Last updated on 2026-02-25 |
+<p>Last updated on 2026-02-27 |
 
         <a href="https://github.com/hpc-carpentry/instructor-onboarding/edit/main/episodes/04-pre-workshop.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -827,7 +827,7 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>Do I need additional resources?</li>
+<li>Do I need additional HPC resources for my workshop?</li>
 <li>Which HPC resources can I use for the workshop?</li>
 <li>What are the advantages and disadvantages of the different resource
 options?</li>
@@ -840,7 +840,8 @@ options?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Identify additional resources needed for the workshop.</li>
+<li>Identify which additional resources are needed for the
+workshop.</li>
 <li>Illustrate advantages and disadvantages of different workshop
 configurations.</li>
 <li>Choose HPC resources best suited for your workshop.</li>
@@ -851,6 +852,274 @@ configurations.</li>
 </div>
 </div>
 </div>
+<section><h2 class="section-heading" id="hpc-resources-and-their-influence-on-trainee-experience">HPC Resources and their influence on trainee experience<a class="anchor" aria-label="anchor" href="#hpc-resources-and-their-influence-on-trainee-experience"></a>
+</h2>
+<hr class="half-width">
+<p>HPC systems are often highly customized installations. This can
+significantly influence the experience of the participants during a
+specific workshop. While the nature of Carpentry-style workshops
+naturally lends itself to weaving system-specific configuration details
+into the lesson, a significant divergence between what is experienced
+during the workshop and what can be read in the material as part of a
+post-workshop recap can significantly increase cognitive load and
+confusion for the learner. The lesson material of <a href="https://carpentries-incubator.github.io/hpc-intro/" class="external-link">Introduction
+to High-Performance Computing</a> targets a general understanding of
+high-performance computing and helps learners form an initial mental
+model of what HPC is and how to interact with HPC systems. Nevertheless,
+HPC systems are often unique installations that differ in the details of
+their software and hardware configurations. These details may differ
+considerably from the cloud-based environment used as the reference
+system in this lesson.</p>
+</section><section><h2 class="section-heading" id="general-checklist">General Checklist<a class="anchor" aria-label="anchor" href="#general-checklist"></a>
+</h2>
+<hr class="half-width">
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<span class="callout-header">Checklist</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Choose HPC resources to use for the workshop</li>
+<li>Choose <em>Introduction to HPC</em> material to use (based on
+resources)</li>
+<li>Prepare material</li>
+<li>Prepare workshop registration and landing page</li>
+<li>Get familiar with common interaction pitfalls for learners</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="choosing-hpc-resources">Choosing HPC resources<a class="anchor" aria-label="anchor" href="#choosing-hpc-resources"></a>
+</h3>
+<p>High-performance computing differs in some ways from the environment
+of well-known and proven lessons of other lesson programs in that HPC
+systems are comparable to other large shared research instruments.
+Teaching the use of such large research equipment only works to a
+limited extent on constrained resources such as a learner’s laptop.
+Therefore, using something that either simulates an HPC system or is
+“the real thing” makes sense when teaching how to use HPC systems.</p>
+<p>The standard material for <a href="https://carpentries-incubator.github.io/hpc-intro/" class="external-link">Introduction
+to High-Performance Computing</a> is tailored to a cloud-based virtual
+HPC environment that learners can use to practice the skills they are
+learning during the lesson. This environment behaves very similarly to
+many other HPC systems the learners might encounter in the future. As
+such, using exactly this virtual environment requires no or only very
+limited adaptation of the lesson material when preparing a workshop.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>In the future, the Carpentries may assist and/or provide
+pre-configured resources for individual workshops. However, until this
+is decided and set up, workshop organizers are fully responsible for
+setting up any HPC cloud environment used in a workshop.</p>
+</div>
+</div>
+</div>
+<p>Using existing HPC resources that may even be provided by the hosting
+institution of an HPC Carpentry workshop can reduce the administrative
+burden for workshop instructors, as the workshop will use existing,
+well-maintained resources of a production HPC center. However, the
+divergence in user experience between the cloud-based environment, which
+forms the basis of the lesson material, and what the learners experience
+during the lesson may increase their mental load. For this reason, the
+lesson material of <a href="https://carpentries-incubator.github.io/hpc-intro/" class="external-link">Introduction
+to High-Performance Computing</a> provides mechanisms to easily adapt
+key information in the rendered material. Furthermore, the hosting
+institution may actually want the workshop to not only teach
+participants about HPC in general, but also about the key aspects of the
+local HPC platform available to them in the future.</p>
+</div>
+<div class="section level3">
+<h3 id="choosing-the-material-for-the-workshop">Choosing the material for the workshop<a class="anchor" aria-label="anchor" href="#choosing-the-material-for-the-workshop"></a>
+</h3>
+<p>Based on your choice of HPC resources, you may want or need to adapt
+the lesson material specifically to the HPC systems used in the
+workshop. As mentioned before, using the cloud-based environment that
+was the basis for creating the material does not require any adaptation
+on the part of the workshop organizer or instructor.</p>
+</div>
+<div class="section level3">
+<h3 id="prepare-material">Prepare material<a class="anchor" aria-label="anchor" href="#prepare-material"></a>
+</h3>
+<p>Check the following episodes on how to customize and adapt the lesson
+material to the HPC resources used in the workshop. Keep in mind that
+the customization process may be unfamiliar to you, so plan enough time
+to <strong>customize and check</strong> the material prior to the
+workshop.</p>
+</div>
+<div class="section level3">
+<h3 id="prepare-workshop-registration-and-landing-page">Prepare workshop registration and landing page<a class="anchor" aria-label="anchor" href="#prepare-workshop-registration-and-landing-page"></a>
+</h3>
+<p>Although the [HPC Carpentry][hpc-carpentry] has been officially
+adopted by the Carpentries Organization in February 2026, its core
+lesson program has not yet been fully integrated into the template for
+the workshop registration and landing page. Therefore, you will need
+some time to map the individual episode timings onto the planned
+schedule manually. This process may become more comfortable in the
+future.</p>
+</div>
+<div class="section level3">
+<h3 id="get-familiar-with-the-common-interaction-pitfalls-for-learners">Get familiar with the common interaction pitfalls for learners<a class="anchor" aria-label="anchor" href="#get-familiar-with-the-common-interaction-pitfalls-for-learners"></a>
+</h3>
+<p>Interacting with an HPC system differs significantly from the
+platforms used in other Carpentries lessons. The lesson material for
+learners may not fully discuss or teach how to resolve the different
+failure scenarios that can occur when working on an HPC system. Having
+worked through the lesson material itself may therefore not sufficiently
+prepare you as an instructor to support learners in identifying and
+resolving problems in their interaction with the HPC system. Some
+pitfalls may be described in the instructor information in the material,
+but some situations may not yet be foreseen or documented.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Help us improve the instructor notes of the material by reporting
+and/or suggesting additional information that would have helped you as
+an instructor during the workshop.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="using-cloud-resources">Using cloud resources<a class="anchor" aria-label="anchor" href="#using-cloud-resources"></a>
+</h2>
+<hr class="half-width">
+<div id="checklist2" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<span class="callout-header">Checklist</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Apply for cloud resources at a cloud provider</li>
+<li>Set up cloud resources using Terraform / Magic Castle</li>
+<li>Test cloud setup prior to the workshop</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="apply-for-cloud-resources">Apply for cloud resources<a class="anchor" aria-label="anchor" href="#apply-for-cloud-resources"></a>
+</h3>
+<p>As the lesson program of HPC Carpentry is still very new to the
+Carpentries organization, there are not yet centralized resources
+available for use in HPC Carpentry workshops. You might therefore need
+to register with a cloud resource provider to apply for hardware
+resources.</p>
+</div>
+<div class="section level3">
+<h3 id="set-up-cloud-resources-using-terraform-and-magic-castle">Set up cloud resources using Terraform and Magic Castle<a class="anchor" aria-label="anchor" href="#set-up-cloud-resources-using-terraform-and-magic-castle"></a>
+</h3>
+<p>We provide a configuration for <a href="https://developer.hashicorp.com/terraform" class="external-link">Terraform</a> and <a href="https://github.com/ComputeCanada/magic_castle" class="external-link">Magic Castle</a> to
+set up cloud resources identical to the setup used as the basis for the
+material.</p>
+</div>
+<div class="section level3">
+<h3 id="test-cloud-setup-prior-to-the-workshop">Test cloud setup prior to the workshop<a class="anchor" aria-label="anchor" href="#test-cloud-setup-prior-to-the-workshop"></a>
+</h3>
+<p>After setup, you should test the different interactions with the
+environment that are part of your workshop.</p>
+</div>
+</section><section><h2 class="section-heading" id="using-local-resources">Using local resources<a class="anchor" aria-label="anchor" href="#using-local-resources"></a>
+</h2>
+<hr class="half-width">
+<div id="checklist3" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<span class="callout-header">Checklist</span>
+<div class="callout-inner">
+<div class="callout-content">
+<ul>
+<li>Apply for a compute budget (as needed)</li>
+<li>Create a reservation (as needed)</li>
+<li>Clarify requirements for accessing local resources</li>
+<li>Ask for any needed information for access at registration time
+<ul>
+<li>Make sure that the registration deadline is set early enough to
+allow for any required processing.</li>
+</ul>
+</li>
+<li>Clarify support during the workshop with local administrators</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="apply-for-a-compute-budget">Apply for a compute budget<a class="anchor" aria-label="anchor" href="#apply-for-a-compute-budget"></a>
+</h3>
+<p>Production HPC environments often have budgeted compute resources.
+Although the lesson does not consume a lot of computational resources
+during the course, you may still have to apply for compute time at the
+hosting institution. This application process is highly individual for
+different institutions, so you need to inform yourself about how to
+apply for compute time. The usernames of your learners will need to be
+associated with the allocated compute budget.</p>
+</div>
+<div class="section level3">
+<h3 id="create-a-reservation">Create a reservation<a class="anchor" aria-label="anchor" href="#create-a-reservation"></a>
+</h3>
+<p>HPC systems are a resource shared among all their users. As HPC
+resources are usually scarce and compute queues are often full during
+working hours, your learners may need to compete for computational
+resources with all other users of the HPC system. A reservation of
+resources will keep them free for your workshop users and keep
+turn-around times low during the workshop, so you don’t incur any delays
+due to excessive waiting time for the learners’ jobs to complete.</p>
+<div id="callout3" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>The situation is similar to taking your learners on a driving lesson
+in the middle of the daily commute. A reservation will keep a lane free
+for your learners to use even if the rest of the resource is
+occupied.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="clarify-requirements-for-accessing-local-resources">Clarify requirements for accessing local resources<a class="anchor" aria-label="anchor" href="#clarify-requirements-for-accessing-local-resources"></a>
+</h3>
+<p>Data centers often keep HPC clusters in access-restricted networks.
+Additional access requirements, such as VPN or two-factor
+authentication, may need to be set up. Depending on your workshop
+parameters (online, on-premises), the constraints for your learners may
+vary. Contact the host organization early in the organization process of
+the workshop to clarify any potential constraints, so you can include
+them in your planning process.</p>
+</div>
+<div class="section level3">
+<h3 id="ask-for-required-information-at-registration-time">Ask for required information at registration time<a class="anchor" aria-label="anchor" href="#ask-for-required-information-at-registration-time"></a>
+</h3>
+<p>If any information is needed from workshop participants to set up
+access to the HPC resources used for the workshop, it is best to ask for
+this information prior to the workshop at registration time. This may
+include, but is not limited to, a valid user account on the HPC system
+in use, so you can associate a potential compute budget and reservation
+ahead of time.</p>
+</div>
+<div class="section level3">
+<h3 id="clarify-administrator-support-during-the-workshop">Clarify administrator support during the workshop<a class="anchor" aria-label="anchor" href="#clarify-administrator-support-during-the-workshop"></a>
+</h3>
+<p>If you are not administering the HPC system used in your workshop,
+having access to an administrator of the HPC resource in use may help
+with troubleshooting interactions with the job scheduler or system
+environment during the workshop.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -859,13 +1128,20 @@ configurations.</li>
 <div class="callout-inner">
 <div class="callout-content">
 <ul>
-<li>The selection of HPC resources depends on your audience</li>
-<li>Cloud resources are well suited for a general introduction</li>
-<li>Specific local HPC resources are best for specific</li>
+<li>The selection of HPC resources depends on your audience.</li>
+<li>Cloud resources are well suited for a general introduction.</li>
+<li>Specific local HPC resources are best for teaching HPC principles
+<em>combined</em> with how to access local resources.</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-05-forking"><p>Content from <a href="05-forking.html">Forking the Introduction to HPC repository</a></p>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</div>
+</section></section><section id="aio-05-forking"><p>Content from <a href="05-forking.html">Forking the Introduction to HPC repository</a></p>
 <hr>
 <p>Last updated on 2026-02-25 |
 
@@ -1027,9 +1303,9 @@ out-of-class experience.</li>
   "creativeWorkStatus": "active",
   "url": "https://hpc-carpentry.github.io/instructor-onboarding/aio.html",
   "identifier": "https://hpc-carpentry.github.io/instructor-onboarding/aio.html",
-  "dateCreated": "2026-02-26",
-  "dateModified": "2026-02-26",
-  "datePublished": "2026-02-26"
+  "dateCreated": "2026-02-27",
+  "dateModified": "2026-02-27",
+  "datePublished": "2026-02-27"
 }
 
   </script><script>
