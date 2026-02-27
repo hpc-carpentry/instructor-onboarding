@@ -21,7 +21,7 @@ carpentry_description: 'How (and why) to teach an HPC Carpentry workshop'
 title: 'Instructor Onboarding for HPC Carpentry'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 2026-02-19
 
 # Comma-separated list of keywords for the lesson
 keywords: 'hpc, setup, The Carpentries'
