@@ -18,17 +18,17 @@ carpentry: 'incubator'
 carpentry_description: 'How (and why) to teach an HPC Carpentry workshop'
 
 # Overall title for pages.
-title: 'Instructor Onboarding for HPC Carpentry'
+title: 'HPC Carpentry Instructor Onboarding'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: 2026-02-19
 
 # Comma-separated list of keywords for the lesson
-keywords: 'hpc, setup, The Carpentries'
+keywords: 'hpc, setup, workshop preparation, lesson customization, The Carpentries'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
-life_cycle: 'stable'
+life_cycle: 'alpha'
 
 # License of the lesson
 license: 'CC-BY 4.0'
