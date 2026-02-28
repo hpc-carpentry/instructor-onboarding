@@ -78,6 +78,16 @@ There you can see the **Run workflow** button to run the first build manually an
 After the first workflow runs through, you have verified that the overall infrastructure is working.
 Your rendered material will then be available at `https://<your-owner-handle>.github.io/<hpc-intro-repo-name>`.
 
+## Enabling Github pages
+
+Before the rendered webpages are published, you need to enable Github Pages.
+In your **Settings** tab, select **Github Pages** in the left side menu.
+There enable **Deploy from branch** and select the **gh-pages** branch.
+
+Save the configuration and Github should start deploying your rendered lesson.
+
+![Github Pages settings](fig/hpc-intro-github-pages.png)
+
 ## Contributing changes back to the upstream repository
 
 As the workflows are enabled for the `main` branch without further intervention by you, it is recommended to use the `main` branch for your customization.
