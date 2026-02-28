@@ -4,19 +4,19 @@ teaching: 10 # teaching time in minutes # FIXME
 exercises: 2 # exercise time in minutes # FIXME
 ---
 
-:::::::: comment
-What do we intend to convey through our workshops?
-What tools do we use?
-What do we cover, and intentionally *not* cover?
-::::::::::::::::
-
 :::::::::::::::::::::::::::::::::::::: questions 
 
+- What do we intend to convey through our workshops?
+- What tools do we use?
+- What do we cover, and intentionally *not* cover?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
+- Understand the intentions of the HPC Carpentry lesson program.
+- Use the tooling adapted by the HPC Carpentry.
+- Learn the scope of the HPC Carpentry curriculum.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
