@@ -89,7 +89,7 @@ Nevertheless, the spirit of the Carpentries is that the material should undergo 
 To make it easier for you to cherry-pick changes from your customized `main` branch to a branch for a pull request to upstream, you should keep individual commits small, self-contained and separate from general content customization.
 ::::::::::::::::::
 
-To enable easy access to the upstream `main` branch&emdash;containing future changes and additions to the official lesson material&emdash you first need to add the official HPC Carpentry repository as an additional remote to your cloned copy.
+To enable easy access to the upstream `main` branch---containing future changes and additions to the official lesson material---you first need to add the official HPC Carpentry repository as an additional remote to your cloned copy.
 
 ```sh
 $ git remote add upstream https://github.com/carpentries-incubator/hpc-intro.git
