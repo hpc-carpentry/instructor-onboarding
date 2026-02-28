@@ -114,6 +114,7 @@ The files in `HPCC_MagicCastle_slurm` will always remain the repository referenc
 The subdirectory of the snippet files correspond to the episode names they are used in.
 
 They are usually output from corresponding commands in the episodes and should be regenerated with the corresponding commands on the HPC system you customize for.
+You only need to create the files (and subdirectories) for the snippets that you want to override.
 
 ::: caution
 ### Adding additional content
