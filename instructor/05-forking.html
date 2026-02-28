@@ -255,6 +255,7 @@
       <div class="accordion-body">
         <ul><li><a href="#creating-a-fork">Creating a fork</a></li>
 <li><a href="#enabling-the-github-actions-workflows">Enabling the Github Actions Workflows</a></li>
+<li><a href="#enabling-github-pages">Enabling Github pages</a></li>
 <li><a href="#contributing-changes-back-to-the-upstream-repository">Contributing changes back to the upstream repository</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
@@ -445,9 +446,9 @@ behalf.</p>
 enable them</strong>, get to the workflow overview of the Actions tab.
 There you will see that the three workflows are available are all
 disabled.</p>
-<figure><img src="../fig/hpc-intro_actioncs_tab_workflows_disabled.png" class="figure mx-auto d-block"></figure><p>When selecting one of them, you will see an info message, letting you
+<figure><img src="../fig/hpc-intro_actions_tab_workflows_disabled.png" class="figure mx-auto d-block"></figure><p>When selecting one of them, you will see an info message, letting you
 know why the workflow was disabled.</p>
-<figure><img src="../fig/hpc-intro_actioncs_tab_workflows_disabled_info.png" alt="Info message about the disabled workflow" class="figure mx-auto d-block"><div class="figcaption">Info message about the disabled workflow</div>
+<figure><img src="../fig/hpc-intro_actions_tab_workflows_disabled_info.png" alt="Info message about the disabled workflow" class="figure mx-auto d-block"><div class="figcaption">Info message about the disabled workflow</div>
 </figure><p>Click <strong>Enable Workflow</strong> for all three workflows. Then
 select the <strong>01 Build and Deploy Site</strong> workflow.</p>
 <p>There you can see the <strong>Run workflow</strong> button to run the
@@ -458,7 +459,15 @@ run.</div>
 overall infrastructure is working. Your rendered material will then be
 available at
 <code>https://&lt;your-owner-handle&gt;.github.io/&lt;hpc-intro-repo-name&gt;</code>.</p>
-</section><section><h2 class="section-heading" id="contributing-changes-back-to-the-upstream-repository">Contributing changes back to the upstream repository<a class="anchor" aria-label="anchor" href="#contributing-changes-back-to-the-upstream-repository"></a></h2>
+</section><section><h2 class="section-heading" id="enabling-github-pages">Enabling Github pages<a class="anchor" aria-label="anchor" href="#enabling-github-pages"></a></h2>
+<hr class="half-width"><p>Before the rendered webpages are published, you need to enable Github
+Pages. In your <strong>Settings</strong> tab, select <strong>Github
+Pages</strong> in the left side menu. There enable <strong>Deploy from
+branch</strong> and select the <strong>gh-pages</strong> branch.</p>
+<p>Save the configuration and Github should start deploying your
+rendered lesson.</p>
+<figure><img src="../fig/hpc-intro-github-pages.png" alt="Github Pages settings" class="figure mx-auto d-block"><div class="figcaption">Github Pages settings</div>
+</figure></section><section><h2 class="section-heading" id="contributing-changes-back-to-the-upstream-repository">Contributing changes back to the upstream repository<a class="anchor" aria-label="anchor" href="#contributing-changes-back-to-the-upstream-repository"></a></h2>
 <hr class="half-width"><p>As the workflows are enabled for the <code>main</code> branch without
 further intervention by you, it is recommended to use the
 <code>main</code> branch for your customization. However, this impacts
