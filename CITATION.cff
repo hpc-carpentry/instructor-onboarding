@@ -1,22 +1,41 @@
-# This template CITATION.cff file was generated with cffinit.
-# Visit https://bit.ly/cffinit to replace its contents
-# with information about your lesson.
-# Remember to update this file periodically, 
-# ensuring that the author list and other fields remain accurate.
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: FIXME
+title: HPC Carpentry Instructor Onboarding
 message: >-
-  Please cite this lesson using the information in this file
-  when you refer to it in publications, and/or if you
-  re-use, adapt, or expand on the content in your own
-  training material.
+  If you use this dataset, please cite it using the metadata
+  from this file.
 type: dataset
 authors:
-  - given-names: FIXME
-    family-names: FIXME
+  - given-names: Marc-André
+    family-names: Hermanns
+    email: hermanns@itc.rwth-aachen.de
+    affiliation: RWTH Aachen University
+    orcid: 'https://orcid.org/0000-0003-3895-7791'
+  - given-names: Toby
+    family-names: Hodges
+    affiliation: The Carpentries
+    orcid: 'https://orcid.org/0000-0003-1766-456X'
+    email: tobyhodges@carpentries.org
+  - given-names: Trevor
+    family-names: Keller
+    orcid: 'https://orcid.org/0000-0002-2920-8302'
+    email: trevor@trevorkeller.com
+  - given-names: Andrew
+    family-names: Reid
+    orcid: 'https://orcid.org/0000-0002-1564-5640'
+    affiliation: National Institute of Standards and Technology
+    email: andrew.reid@nist.gov
+repository-code: 'https://github.com/hpc-carpentry/instructor-onboarding'
+url: 'https://hpc-carpentry.org/instructor-onboarding'
 abstract: >-
-  FIXME Replace this with a short abstract describing the
-  lesson, e.g. its target audience and main intended
-  learning objectives.
+  This lesson provides a basic introduction into the HPC
+  Carpentry curriculum and how to customize lesson content
+  to a specific HPC system used in a workshop.
+keywords:
+  - HPC
+  - high-performance computing
+  - learning material
+  - lesson customization
 license: CC-BY-4.0
