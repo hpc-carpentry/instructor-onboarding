@@ -439,7 +439,7 @@ you have good ideas, and we want to incorporate better preactices!</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Output </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -468,7 +468,7 @@ challenge blocks?</h3>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
@@ -532,16 +532,12 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-02-curriculum"><p>Content from <a href="02-curriculum.html">HPC Carpentry Curriculum</a></p>
 <hr>
-<p>Last updated on 2026-02-26 |
+<p>Last updated on 2026-02-28 |
 
         <a href="https://github.com/hpc-carpentry/instructor-onboarding/edit/main/episodes/02-curriculum.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
-<div class="comment">
-<p>What do we intend to convey through our workshops? What tools do we
-use? What do we cover, and intentionally <em>not</em> cover?</p>
-</div>
 <div class="overview card">
 <h2 class="card-header">Overview</h2>
 <div class="row g-0">
@@ -549,6 +545,11 @@ use? What do we cover, and intentionally <em>not</em> cover?</p>
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
+<ul>
+<li>What do we intend to convey through our workshops?</li>
+<li>What tools do we use?</li>
+<li>What do we cover, and intentionally <em>not</em> cover?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -556,6 +557,11 @@ use? What do we cover, and intentionally <em>not</em> cover?</p>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
+<ul>
+<li>Understand the intentions of the HPC Carpentry lesson program.</li>
+<li>Use the tooling adapted by the HPC Carpentry.</li>
+<li>Learn the scope of the HPC Carpentry curriculum.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1152,7 +1158,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-05-forking"><p>Content from <a href="05-forking.html">Forking the Introduction to HPC repository</a></p>
 <hr>
-<p>Last updated on 2026-02-25 |
+<p>Last updated on 2026-02-28 |
 
         <a href="https://github.com/hpc-carpentry/instructor-onboarding/edit/main/episodes/05-forking.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1190,6 +1196,170 @@ proposing updates to the upstream.</li>
 </div>
 </div>
 </div>
+<section><h2 class="section-heading" id="creating-a-fork">Creating a fork<a class="anchor" aria-label="anchor" href="#creating-a-fork"></a>
+</h2>
+<hr class="half-width">
+<p>To lower the cognitive load of learners in your workshop by bringing
+the lesson material and the experience during the workshop closer
+together, you may want to customize the lesson material. If you need to
+customize the lesson material prior to a workshop, this can only be done
+on a separate fork of the lesson material.</p>
+<div id="prereq1" class="callout prereq">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check"></i>
+</div>
+<span class="callout-header">Prerequisite</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>The lesson material is hosted on Github and the automatic build
+infrastructure realized through Github actions. To use the same workflow
+described in this episode you will need an <strong>active Github
+account</strong>.</p>
+<p>Support for other Git Hostings Services and their CI infrastructure
+is currently not available.</p>
+</div>
+</div>
+</div>
+<figure><img src="fig/hpc-intro_create_fork.png" alt="The pull-down menu of the fork lets you start to create a fork" class="figure mx-auto d-block"><div class="figcaption">The pull-down menu of the fork lets you start to
+create a fork</div>
+</figure><p>Using the pull-down menu next the fork button lets you start the
+forking process.</p>
+<figure><img src="fig/hpc-intro_create_fork_details.png" alt="Select the location of the fork and enable forking all branches of the repository" class="figure mx-auto d-block"><div class="figcaption">Select the location of the fork and enable
+forking all branches of the repository</div>
+</figure><p>The <strong>owner</strong> determines the URL of the generated
+material. Choosing a location that resembles the hosting organization
+will help recognizability and findability of your material. If the
+hosting organization needs multiple customized versions of the material
+(e.g., customization to multiple different HPC systems), you can
+customized the <strong>name</strong> of the forked repository for
+distinction.</p>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>In order to fork the full auto-generate infrastructure you need to
+make sure that the “Copy the <code>main</code> branch only” option is
+<strong>deselected</strong> before creating the fork.</p>
+</div>
+</div>
+</div>
+</section><section><h2 class="section-heading" id="enabling-the-github-actions-workflows">Enabling the Github Actions Workflows<a class="anchor" aria-label="anchor" href="#enabling-the-github-actions-workflows"></a>
+</h2>
+<hr class="half-width">
+<p>As mentioned before, the repository for the lesson material contains
+Github Actions workflows. As these can contain commands, then executed
+on your behalf, those workflows are disabled by default. To enable them
+you have to select the <strong>Actions</strong> tab.</p>
+<figure><img src="fig/hpc-intro_workflows_disabled_message.png" alt="Warning message of disabled workflows shown after selecting the Actions tab." class="figure mx-auto d-block"><div class="figcaption">Warning message of disabled workflows shown
+after selecting the Actions tab.</div>
+</figure><div id="caution1" class="callout caution">
+<div class="callout-square">
+<i class="callout-icon" data-feather="alert-triangle"></i>
+</div>
+<span class="callout-header">Caution</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>As with all security warnings, you should <strong>verify</strong>
+what the code contained in the Github Actions Workflow will do
+<strong>or trust</strong> the providing organization (in this case the
+HPC Carpentry) to ensure no malicious code is executed on your
+behalf.</p>
+</div>
+</div>
+</div>
+<p>After selecting <strong>I understand my workflows, go ahead and
+enable them</strong>, get to the workflow overview of the Actions tab.
+There you will see that the three workflows are available are all
+disabled.</p>
+<figure><img src="fig/hpc-intro_actioncs_tab_workflows_disabled.png" class="figure mx-auto d-block"></figure><p>When selecting one of them, you will see an info message, letting you
+know why the workflow was disabled.</p>
+<figure><img src="fig/hpc-intro_actioncs_tab_workflows_disabled_info.png" alt="Info message about the disabled workflow" class="figure mx-auto d-block"><div class="figcaption">Info message about the disabled workflow</div>
+</figure><p>Click <strong>Enable Workflow</strong> for all three workflows. Then
+select the <strong>01 Build and Deploy Site</strong> workflow.</p>
+<p>There you can see the <strong>Run workflow</strong> button to run the
+first build manually and test the infrastructure.</p>
+<figure><img src="fig/hpc-intro_actions_tab_workflows_manual_run.png" alt="Empty workflow history before the first manual run." class="figure mx-auto d-block"><div class="figcaption">Empty workflow history before the first manual
+run.</div>
+</figure><p>After the first workflow runs through, you have verified that the
+overall infrastructure is working. Your rendered material will then be
+available at
+<code>https://&lt;your-owner-handle&gt;.github.io/&lt;hpc-intro-repo-name&gt;</code>.</p>
+</section><section><h2 class="section-heading" id="contributing-changes-back-to-the-upstream-repository">Contributing changes back to the upstream repository<a class="anchor" aria-label="anchor" href="#contributing-changes-back-to-the-upstream-repository"></a>
+</h2>
+<hr class="half-width">
+<p>As the workflows are enabled for the <code>main</code> branch without
+further intervention by you, it is recommended to use the
+<code>main</code> branch for your customization. However, this impacts
+how you can keep working with the <strong>upstream</strong> version of
+the material. When wanting to propose changes and improvements to the
+upstream repository, you will <strong>not be able</strong> to base these
+off your customized <code>main</code> branch, because the majority of
+your customizations should remain in your customized downstream
+repository. Nevertheless, the spirit of the Carpentries is that the
+material should undergo constant improvement and community contributions
+are explicitly welcome.</p>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>To make it easier for you to cherry-pick changes from your customized
+<code>main</code> branch to a branch for a pull request to upstream, you
+should keep individual commits small, self-contained and separate from
+general content customization.</p>
+</div>
+</div>
+</div>
+<p>To enable easy access to the upstream <code>main</code>
+branch&amp;emdash;containing future changes and additions to the
+official lesson material&amp;emdash you first need to add the official
+HPC Carpentry repository as an additional remote to your cloned
+copy.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> git remote add upstream https://github.com/carpentries-incubator/hpc-intro.git</span></code></pre>
+</div>
+<p>With the official main HPC Carpentry repository available as
+<code>upstream</code> you can then create a branch (e.g.,
+<code>upstream-main</code>) that tracks the <code>main</code> branch of
+the <code>upstream</code> repository.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> upstream-main upstream/main</span></code></pre>
+</div>
+<p>Any branches that form the basis for pull requests, containing your
+suggested contributions to the <code>upstream</code> repository can then
+easily be created with</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> git switch upstream-main</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="ex">$</span> git pull <span class="at">--rebase</span> <span class="co"># this branch will never contain any of your commits so --rebase would not be strictly necessary</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="ex">$</span> git branch <span class="op">&lt;</span>your-feature-branch<span class="op">&gt;</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="ex">$</span> git switch <span class="op">&lt;</span>your-feature-branch<span class="op">&gt;</span></span></code></pre>
+</div>
+<p>You can keep both, <code>your-feature-branch</code> and your
+<code>main</code> branch up to date by continuously rebasing it on any
+changes coming in from the <code>upstream</code> repository.</p>
+<div id="callout3" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>The fewer your changes are to the official episode source material
+the easier it will be to keep your material up to date.</p>
+</div>
+</div>
+</div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1207,7 +1377,12 @@ customizations require separate forks.</li>
 </ul>
 </div>
 </div>
-</div></section><section id="aio-06-localization"><p>Content from <a href="06-localization.html">Customize the lesson material</a></p>
+</div>
+<!--
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use.
+ -->
+</section></section><section id="aio-06-localization"><p>Content from <a href="06-localization.html">Customize the lesson material</a></p>
 <hr>
 <p>Last updated on 2026-02-25 |
 
@@ -1313,8 +1488,8 @@ out-of-class experience.</li>
   "url": "https://hpc-carpentry.github.io/instructor-onboarding/aio.html",
   "identifier": "https://hpc-carpentry.github.io/instructor-onboarding/aio.html",
   "dateCreated": "2026-02-19",
-  "dateModified": "2026-02-27",
-  "datePublished": "2026-02-27"
+  "dateModified": "2026-02-28",
+  "datePublished": "2026-02-28"
 }
 
   </script><script>
