@@ -62,11 +62,11 @@ As with all security warnings, you should **verify** what the code contained in 
 After selecting **I understand my workflows, go ahead and enable them**, get to the workflow overview of the Actions tab.
 There you will see that the three workflows are available are all disabled.
 
-![](fig/hpc-intro_actioncs_tab_workflows_disabled.png)
+![](fig/hpc-intro_actions_tab_workflows_disabled.png)
 
 When selecting one of them, you will see an info message, letting you know why the workflow was disabled.
 
-![Info message about the disabled workflow](fig/hpc-intro_actioncs_tab_workflows_disabled_info.png)
+![Info message about the disabled workflow](fig/hpc-intro_actions_tab_workflows_disabled_info.png)
 
 Click **Enable Workflow** for all three workflows.
 Then select the **01 Build and Deploy Site** workflow.
