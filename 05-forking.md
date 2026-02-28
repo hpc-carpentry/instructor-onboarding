@@ -62,11 +62,11 @@ As with all security warnings, you should **verify** what the code contained in 
 After selecting **I understand my workflows, go ahead and enable them**, get to the workflow overview of the Actions tab.
 There you will see that the three workflows are available are all disabled.
 
-![](fig/hpc-intro_actioncs_tab_workflows_disabled.png)
+![](fig/hpc-intro_actions_tab_workflows_disabled.png)
 
 When selecting one of them, you will see an info message, letting you know why the workflow was disabled.
 
-![Info message about the disabled workflow](fig/hpc-intro_actioncs_tab_workflows_disabled_info.png)
+![Info message about the disabled workflow](fig/hpc-intro_actions_tab_workflows_disabled_info.png)
 
 Click **Enable Workflow** for all three workflows.
 Then select the **01 Build and Deploy Site** workflow.
@@ -77,6 +77,16 @@ There you can see the **Run workflow** button to run the first build manually an
 
 After the first workflow runs through, you have verified that the overall infrastructure is working.
 Your rendered material will then be available at `https://<your-owner-handle>.github.io/<hpc-intro-repo-name>`.
+
+## Enabling Github pages
+
+Before the rendered webpages are published, you need to enable Github Pages.
+In your **Settings** tab, select **Github Pages** in the left side menu.
+There enable **Deploy from branch** and select the **gh-pages** branch.
+
+Save the configuration and Github should start deploying your rendered lesson.
+
+![Github Pages settings](fig/hpc-intro-github-pages.png)
 
 ## Contributing changes back to the upstream repository
 
