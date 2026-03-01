@@ -22,7 +22,7 @@ exercises: 2 # exercise time in minutes # FIXME
 
 ::::::::: caution
 The customization infrastructure is **not meant** for changing or adding **signification amount of additional course content**.
-You should always check whether the customizations you perform **serve the reduction of cognitive load during and after the workshop.
+You should always check whether the customizations you perform **serves the reduction of cognitive load during and after the workshop**.
 :::::::::::::::::
 
 ## Creating a repository for the customizations
