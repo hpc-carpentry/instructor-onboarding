@@ -331,7 +331,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Customize the lesson material</h1>
-        <p>Last updated on 2026-02-28 |
+        <p>Last updated on 2026-03-01 |
 
         <a href="https://github.com/hpc-carpentry/instructor-onboarding/edit/main/episodes/06-localization.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -379,8 +379,8 @@ purpose.</li>
 <p>The customization infrastructure is <strong>not meant</strong> for
 changing or adding <strong>signification amount of additional course
 content</strong>. You should always check whether the customizations you
-perform **serve the reduction of cognitive load during and after the
-workshop.</p>
+perform <strong>serves the reduction of cognitive load during and after
+the workshop</strong>.</p>
 </div>
 </div>
 </div>
@@ -428,23 +428,70 @@ two subdirectories:</p>
 Carpentry organization that you can and most likely should use as the
 base for your customization. It contains the customization for the
 cloud-based cluster installation based on Magic Castle using the Slurm
-scheduler. The latter is an example customization for reference.</p>
+scheduler. The latter is an example customization for reference that
+contains values different from the base template to check whether the
+customization works in general.</p>
 <p>To start your first own customization you have to create a new
 subdirectory for the configuration and snippets.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cd episodes/files/customization</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> mkdir YourCustomizationDirectory</span></code></pre>
+</div>
 <p>This directory has to contain the configuration file
 <code>_config_options.yml</code>. The minimal configuration contains the
 variable <code>snippets</code>, set to the directory name of your
 customization.</p>
 </section><section><h2 class="section-heading" id="enabling-the-customization-in-the-github-actions-workflow">Enabling the customization in the Github Actions Workflow<a class="anchor" aria-label="anchor" href="#enabling-the-customization-in-the-github-actions-workflow"></a></h2>
-<hr class="half-width"><p>To enable the use of this customization you have to</p>
+<hr class="half-width"><p>To enable the use of this customization you have to set the
+environment variable <code>HPC_CARPENTRY_CUSTOMIZATION</code> to the
+location of the customization configuration during the build
+process.</p>
+<p>When you are building the material locally you can just set the
+variable in your building shell from which you start R to build the
+lesson material.</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> export HPC_CARPENTRY_CUSTOMIZATION=episodes/files/customization/YourCustomizationDirectory/_config_options.yml</span></code></pre>
+</div>
+<div id="callout2" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Currently, the standard build process does not recognize changes in
+the customization configuration or the snippets. To get a clean build
+after changing anything in the customization, you need to <strong>reset
+the site</strong> with calling <code>sandpaper::reset_site()</code> and
+<strong>trigger the build</strong> with
+<code>sandpaper::build_lesson()</code>.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> r <span class="at">-e</span> <span class="st">"sandpaper::reset_site();sandpaper::build_lesson()"</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<p>To set this during the Github Actions Workflow you need to select
+<em>Secrets and variables</em> in the left menu of the <em>Settings</em>
+tab. Then you select <em>Actions</em> and select the <em>Variables</em>
+tab.</p>
 <figure><img src="fig/hpc-intro_actions_variables_overview.png" alt="Viewing the Github Actions secrets" class="figure mx-auto d-block"><div class="figcaption">Viewing the Github Actions secrets</div>
-</figure><figure><img src="fig/hpc-intro_actions_new_repository_variable.png" alt="Adding a new repository secret" class="figure mx-auto d-block"><div class="figcaption">Adding a new repository secret</div>
-</figure></section><section><h2 class="section-heading" id="customize-via-in-paragraph-variables">Customize via in-paragraph variables<a class="anchor" aria-label="anchor" href="#customize-via-in-paragraph-variables"></a></h2>
+</figure><p>There you set <code>HPC_CARPENTRY_CUSTOMIZATION</code> as a
+<strong>Repository variable</strong>.</p>
+<figure><img src="fig/hpc-intro_actions_new_repository_variable.png" alt="Adding a new repository secret" class="figure mx-auto d-block"><div class="figcaption">Adding a new repository secret</div>
+</figure><p>This will then be passed to the build workflow.</p>
+</section><section><h2 class="section-heading" id="customize-via-in-paragraph-variables">Customize via in-paragraph variables<a class="anchor" aria-label="anchor" href="#customize-via-in-paragraph-variables"></a></h2>
 <hr class="half-width"><p>You can modify single variables in the
 <code>_config_options.yml</code> file of your customization. You do not
 have to re-define all variables, so your customization config can only
 list the variables you want to change in the lesson.</p>
-<div id="callout2" class="callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -461,10 +508,10 @@ retain the variable hierarchy for the variables you do re-define.</p>
 You can generate the current list of support snippets in the
 <code>HPCC_MagicCastle_slurm/snippets</code> directory yourself like
 this:</p>
-<div class="codewrapper sourceCode" id="cb1">
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> HPCC_MagicCastle_slurm/snippets $ find . <span class="at">-type</span> f</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> HPCC_MagicCastle_slurm/snippets $ find . <span class="at">-type</span> f</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -575,7 +622,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.20.0)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -597,8 +644,8 @@ any links that you are not going to use.
   "url": "https://hpc-carpentry.github.io/instructor-onboarding/06-localization.html",
   "identifier": "https://hpc-carpentry.github.io/instructor-onboarding/06-localization.html",
   "dateCreated": "2026-02-19",
-  "dateModified": "2026-02-28",
-  "datePublished": "2026-02-28"
+  "dateModified": "2026-03-01",
+  "datePublished": "2026-03-01"
 }
 
   </script><script>
