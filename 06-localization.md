@@ -22,7 +22,7 @@ exercises: 2 # exercise time in minutes # FIXME
 
 ::::::::: caution
 The customization infrastructure is **not meant** for changing or adding **signification amount of additional course content**.
-You should always check whether the customizations you perform **serve the reduction of cognitive load during and after the workshop.
+You should always check whether the customizations you perform **serves the reduction of cognitive load during and after the workshop**.
 :::::::::::::::::
 
 ## Creating a repository for the customizations
@@ -54,20 +54,47 @@ There you can find two subdirectories:
 
 The former is the **base template** provided by the HPC Carpentry organization that you can and most likely should use as the base for your customization.
 It contains the customization for the cloud-based cluster installation based on Magic Castle using the Slurm scheduler.
-The latter is an example customization for reference.
+The latter is an example customization for reference that contains values different from the base template to check whether the customization works in general.
 
 To start your first own customization you have to create a new subdirectory for the configuration and snippets.
+
+```sh
+$ cd episodes/files/customization
+$ mkdir YourCustomizationDirectory
+```
+
 
 This directory has to contain the configuration file `_config_options.yml`.
 The minimal configuration contains the variable `snippets`, set to the directory name of your customization.
 
 ## Enabling the customization in the Github Actions Workflow
 
-To enable the use of this customization you have to 
+To enable the use of this customization you have to set the environment variable `HPC_CARPENTRY_CUSTOMIZATION` to the location of the customization configuration during the build process.
+
+When you are building the material locally you can just set the variable in your building shell from which you start R to build the lesson material.
+
+```sh
+$ export HPC_CARPENTRY_CUSTOMIZATION=episodes/files/customization/YourCustomizationDirectory/_config_options.yml
+```
+
+:::::::::: callout
+Currently, the standard build process does not recognize changes in the customization configuration or the snippets. To get a clean build after changing anything in the customization, you need to **reset the site** with calling `sandpaper::reset_site()` and **trigger the build** with `sandpaper::build_lesson()`.
+
+```sh
+$ r -e "sandpaper::reset_site();sandpaper::build_lesson()"
+```
+::::::::::::::::::
+
+To set this during the Github Actions Workflow you need to select *Secrets and variables* in the left menu of the *Settings* tab.
+Then you select *Actions* and select the *Variables* tab.
 
 ![Viewing the Github Actions secrets](fig/hpc-intro_actions_variables_overview.png)
 
+There you set `HPC_CARPENTRY_CUSTOMIZATION` as a **Repository variable**.
+
 ![Adding a new repository secret](fig/hpc-intro_actions_new_repository_variable.png)
+
+This will then be passed to the build workflow.
 
 ## Customize via in-paragraph variables
 
