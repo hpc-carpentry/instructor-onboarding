@@ -63,11 +63,32 @@ The minimal configuration contains the variable `snippets`, set to the directory
 
 ## Enabling the customization in the Github Actions Workflow
 
-To enable the use of this customization you have to 
+To enable the use of this customization you have to set the environment variable `HPC_CARPENTRY_CUSTOMIZATION` to the location of the customization configuration during the build process.
+
+When you are building the material locally you can just set the variable in your building shell from which you start R to build the lesson material.
+
+```sh
+$ export HPC_CARPENTRY_CUSTOMIZATION=episodes/files/customization/YourCustomizationDirectory/_config_options.yml
+```
+
+:::::::::: callout
+Currently, the standard build process does not recognize changes in the customization configuration or the snippets. To get a clean build after changing anything in the customization, you need to **reset the site** with calling `sandpaper::reset_site()` and **trigger the build** with `sandpaper::build_lesson()`.
+
+```sh
+$ r -e "sandpaper::reset_site();sandpaper::build_lesson()"
+```
+::::::::::::::::::
+
+To set this during the Github Actions Workflow you need to select *Secrets and variables* in the left menu of the *Settings* tab.
+Then you select *Actions* and select the *Variables* tab.
 
 ![Viewing the Github Actions secrets](fig/hpc-intro_actions_variables_overview.png)
 
+There you set `HPC_CARPENTRY_CUSTOMIZATION` as a **Repository variable**.
+
 ![Adding a new repository secret](fig/hpc-intro_actions_new_repository_variable.png)
+
+This will then be passed to the build workflow.
 
 ## Customize via in-paragraph variables
 
