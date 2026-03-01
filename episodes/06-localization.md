@@ -58,6 +58,12 @@ The latter is an example customization for reference that contains values differ
 
 To start your first own customization you have to create a new subdirectory for the configuration and snippets.
 
+```sh
+$ cd episodes/files/customization
+$ mkdir YourCustomizationDirectory
+```
+
+
 This directory has to contain the configuration file `_config_options.yml`.
 The minimal configuration contains the variable `snippets`, set to the directory name of your customization.
 
