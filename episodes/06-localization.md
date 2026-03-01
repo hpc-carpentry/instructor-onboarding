@@ -54,7 +54,7 @@ There you can find two subdirectories:
 
 The former is the **base template** provided by the HPC Carpentry organization that you can and most likely should use as the base for your customization.
 It contains the customization for the cloud-based cluster installation based on Magic Castle using the Slurm scheduler.
-The latter is an example customization for reference.
+The latter is an example customization for reference that contains values different from the base template to check whether the customization works in general.
 
 To start your first own customization you have to create a new subdirectory for the configuration and snippets.
 
