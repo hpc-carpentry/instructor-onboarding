@@ -25,7 +25,13 @@
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/aio.html</loc>
+  </url>
+  <url>
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/citation.html</loc>
+  </url>
+  <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/images.html</loc>
   </url>
   <url>
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/index.html</loc>
@@ -55,16 +61,34 @@
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/citation.html</loc>
   </url>
   <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://hpc-carpentry.github.io/instructor-onboarding/key-points.html</loc>
   </url>
   <url>
     <loc>https://hpc-carpentry.github.io/instructor-onboarding/profiles.html</loc>
