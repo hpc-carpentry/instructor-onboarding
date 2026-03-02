@@ -66,12 +66,11 @@ contact: 'team@carpentries.org'
 
 # Order of episodes in your lesson
 episodes: 
-- 01-introduction.md  # purpose and setup roadmap
-- 02-curriculum.md    # lesson program roadmap
-- 03-amdahl.md        # about the dummy code
-- 04-pre-workshop.md  # how to prepare for a workshop
-- 05-forking.md       # how best to retrieve lesson materials
-- 06-localization.md  # how to tear down a workshop
+- 01-curriculum.md    # lesson program roadmap
+- 02-amdahl.md        # about the dummy code
+- 03-pre-workshop.md  # how to prepare for a workshop
+- 04-forking.md       # how best to retrieve lesson materials
+- 05-localization.md  # how to tear down a workshop
 
 # Information for Learners
 learners: 
