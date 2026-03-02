@@ -21,8 +21,10 @@ exercises: 2 # exercise time in minutes # FIXME
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::: caution
+
 The customization infrastructure is **not meant** for changing or adding **significant amounts of additional course content**.
 You should always check whether the customizations you perform **serve to reduce cognitive load during and after the workshop**.
+
 :::::::::::::::::
 
 ## Creating a repository for the customizations
@@ -41,9 +43,6 @@ The lesson material already provides a complete base template with `HPCC_MagicCa
 Variables are often small strings of one or a few words, representing hostnames, commands, arguments, URLs, and similar items.
 Snippets are larger text files that are inserted as-is into the Markdown source during the rendering process.
 
-:::::::: callout
-You cannot use the special syntax for any of the callouts available in the Carpentry Workbench; however, you can use any other Markdown formatting options.
-::::::::::::::::
 
 ## Generating a customization directory
 
@@ -76,7 +75,7 @@ To enable the use of this customization, you have to set the environment variabl
 When you build the material locally, you can set the variable in the shell from which you start R to build the lesson material.
 
 ```sh
-$ export HPC_CARPENTRY_CUSTOMIZATION=episodes/files/customization/YourCustomizationDirectory/_config_options.yml
+$ export HPC_CARPENTRY_CUSTOMIZATION=/full/path/to/episodes/files/customization/YourCustomizationDirectory/_config_options.yml
 ```
 
 :::::::::: callout
