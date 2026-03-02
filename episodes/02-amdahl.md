@@ -47,6 +47,10 @@ the serial part might involve problem set-up or tear-down, or
 data aggregation steps that integrate the resulsts of the 
 parallel tasks.
 
+![Plot illustrating Amdahl's Law. [Image source](https://commons.wikimedia.org/wiki/File:AmdahlsLaw.svg), created by [Daniels220](https://en.wikipedia.org/wiki/User:Daniels220). (Licensed CC-BY-SA.)](https://upload.wikimedia.org/wikipedia/commons/e/ea/AmdahlsLaw.svg){
+    alt="A plot of Amdahl’s law with logarithmic x-axis and linear y-axis. The speed-up of a program from parallelization is limited by how much of the program can be parallelized.For example, if 95% of the program can be parallelized, the theoretical maximum speedup using parallel computing would be 20× as shown in the diagram, no matter how many processors are used. If 90% of the program can be parallelized, the theoretical maximum speed-up using parallel computing would be 10×."
+}
+
 In this case, there are diminishing returns to increasing 
 the degree of parallelization, and after a point, developer 
 effort is better invested in other performance strategies, 
