@@ -1,111 +1,71 @@
 ---
-title: "Customizing HPC Carpentry Material"
-teaching: 50 # teaching time in minutes
-exercises: 2 # exercise time in minutes
+title: "Introduction"
+teaching: 10 # teaching time in minutes
+exercises: 0 # exercise time in minutes
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Where are the files I need to edit?
-- What parameters should I set?
-- What might my cluster's admins help me with?
-- When should I make a new snippet? How?
+- Who is this Instructor Onboarding for?
+- What is covered in this Instructor Onboarding?
+- Where can I go to ask questions and find out more about HPC Carpentry?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to customize the site for your cluster
-- Instruct how to build and serve the site
-- Demonstrate how to include pieces of code, output, and custom teaching material
+After this episode, Instructors will be able to...
+
+- Summarise the contents of this Instructor Onboarding.
+- Identify communications channels used by the HPC Carpentry community.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+This Instructor Onboarding aims to prepare Instructors to coordinate and teach HPC Carpentry workshops.
 
-Every compute cluster is a little different, and HPC Carpentry works
-best when the lesson materials reflect those differences.
-We use the Workbench built-in tools and R Markdown to render this
-customizxed content, structured with maintainability in mind.
-We want to support edits without breaking synchronization with the
-upstream repositories: you have good ideas, and we want to incorporate
-better preactices!
+::::::::::::::::::::::: prereq
 
+### Prerequisites
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+This Instructor Onboarding assumes that you have:
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+* Completed [The Carpentries Instructor Training](https://carpentries.org/instructor-training/).
+* Have sufficient experience of working in a remote, shared computing environment to teach [the HPC Carpentry core curriculum](./02-curriculum.md) with confidence.
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+Instructors are _not_ required to have any experience of administering a high-performance computing cluster.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+::::::::::::::::::::::::::::::
 
-## Challenge 1: Can you do it?
+Onboarding provides:
 
-What is the output of this command?
+* [An overview of the HPC Carpentry core curriculum](./02-curriculum.md)
+* [Introduction to the central teaching example used in a workshop](./03-amdahl.md)
+* [Guidance for Instructors planning and preparing to teach n HPC Carpentry workshop](./04-pre-workshop.md)
+* [Advice for managing a fork of an HPC Carpentry lesson](./05-forking.md)
+* [Guidance on adapting HPC Carpentry lessons to reflect a local/institutional cluster configuration](./06-localization.md)
+* [Tips for monitoring and troubleshooting cluster compute issues during a workshop](./07-diagnostics.md)
 
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
+::::::::::::::::::::::::: callout
 
-:::::::::::::::::::::::: solution 
+## Additional Resources
+In addition to this Onboarding, Instructors may benefit from referring to the following resources:
 
-## Output
- 
-```output
-[1] "This new lesson looks good"
-```
+* [Instructor Tip Sheet](https://zenodo.org/records/14353099)
+* [Instructors Handbook](https://docs.carpentries.org/handbooks/instructors.html)
+
+The HPC Carpentry community is always happy to help anyone who is organising and/or preparing to teach a workshop.
+
+* [The `discuss-hpc` group on TopicBox](https://carpentries.topicbox.com/groups/discuss-hpc) is a general purpose mailing list for announcements and discussionr elated to the project.
+* Many community members are active on the `hpc-carpentry` channel of [The Carpentries Slack workspace](https://slack-invite.carpentries.org/).
+* The HPC Carpentry community meets several times per month, in open sessions listed on [The Carpentries Community Calendar](https://carpentries.org/community/events/#calendar-of-events).
 
 :::::::::::::::::::::::::::::::::
-
-
-## Challenge 2: how do you nest solutions within challenge blocks?
-
-:::::::::::::::::::::::: solution 
-
-You can add a line with at least three colons and a `solution` tag.
-
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-## Figures
-
-You can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-::::::::::::::::::::::::::::::::::::: callout
-
-Callout sections can highlight information.
-
-They are sometimes used to emphasise particularly important points
-but are also used in some lessons to present "asides": 
-content that is not central to the narrative of the lesson,
-e.g. by providing the answer to a commonly-asked question.
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- This Onboarding is for Carpentries Instructors organising and/or preparing to teach an HPC Carpentry workshop.
+- The Onboarding explores the HPC Carpentry core curriculum and sets Instructors up to successfully adapt workshops to their local context.
+- The HPC Carpentry community meets regularly and communicates via Slack and mailing list, and is always happy to help new Instructors get involved.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-[r-markdown]: https://rmarkdown.rstudio.com/

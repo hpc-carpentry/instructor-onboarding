@@ -8,7 +8,9 @@ any links that you are not going to use.
 [rstudio]: https://www.rstudio.com/
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
 [hpc-intro]: https://carpentries-incubator.github.io/hpc-intro/
+[hpc-workflows]: https://carpentries-incubator.github.io/hpc-workflows/
+[magic-castle]: https://github.com/ComputeCanada/magic_castle
 [magic-castle-setup]: #
 [terraform]: https://developer.hashicorp.com/terraform
-[magic-castle]: https://github.com/ComputeCanada/magic_castle
+
 
