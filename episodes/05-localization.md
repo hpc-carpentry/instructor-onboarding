@@ -179,6 +179,82 @@ Submitted batch job 12345
 
 This snippet will now be used in your lesson instead of the default from the `HPCC_MagicCastle_slurm` configuration.
 
+When we have finished, our `episodes/files/customization/YourCustomizationDirectory/` directory has the following contents:
+
+```output
+YourCustomizationDirectory
+├── _config_options.yml
+└── snippets
+    └── scheduler
+        └── basic-job-script.Rmd
+```
+
+Contents of `_config_options.yml`:
+
+```yaml
+snippets: "YourCustomizationDirectory"
+remote:
+  login: "login.YourCustomization.org"
+```
+
+Contents of `snippets/scheduler/basic-job-script.Rmd`:
+
+````markdown
+```output
+Submitted batch job 12345
+```
+````
+
+:::::::::::::::::::::::::::::: challenge
+
+### Make More Customizations
+Repeating the steps above, make some more customizations to your fork of `hpc-intro`.
+
+1. Customize the shell prompt displayed in the lesson for the _local_ and _remote_ systems, by overriding the values of two more variables in `_config_options.yml`.
+2. Modify a copy of the template at `episodes/files/customization/HPCC_MagicCastle_slurm/snippets/modules/available-modules.Rmd` to include some output for `module avail` on your cluster, then save it to your own `snippets/modules/available-modules.Rmd` file. Which page of your lesson will this change affect?
+
+::::::::::::::::: solution
+
+1. Add customized prompts to `YourCustomizationDirectory/_config_options.yml`:
+
+    ```yaml
+    local:
+      prompt: "[dorothy@kansas:~]$"
+    remote:
+      prompt: "[dorothy@yellow-brick-road ~]$"
+    ```
+
+2. Create a new directory, `YourCustomizationDirectory/snippets/modules`, and add a new file to it, `available-modules.Rmd`:
+
+    ````markdown
+    ```bash
+    `r config$remote$prompt` module avail | less
+    ```
+
+    ```output
+    ~~~ /cvmfs/pilot.eessi-hpc.org/2020.12/software/x86_64/amd/zen2/modules/all ~~~
+    MyCustomModule/3.16.4-GCCcore-x.y.z             Modulezz/v2026-custom
+
+    [removed most of the output here for clarity]
+
+    Where:
+    L:        Module is loaded
+    D:        Default Module
+    Aliases exist: foo/1.2.3 (1.2) means that
+                "module load foo/1.2" will load foo/1.2.3
+
+    Use "module spider" to find all possible modules and extensions.
+    Use "module keyword key1 key2 ..." to search for all possible modules matching
+    any of the "keys".
+    ```
+    ````
+
+    When built into your lesson, this snippet will be inserted into the _Listing Available Modules_ subsection of the _Accessing software via Modules_ episode of the lesson ([location in the central version of the lesson for reference](https://carpentries-incubator.github.io/hpc-intro/15-modules.html#listing-available-modules)).
+
+::::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::
+
 ::: caution
 
 ### Adding additional content
