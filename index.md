@@ -12,7 +12,7 @@ This Instructor Onboarding prepares Instructors to coordinate and teach HPC Carp
 The Instructor Onboarding assumes that you have:
 
 * Completed [The Carpentries Instructor Training](https://carpentries.org/instructor-training/).
-* Have sufficient experience of working in a remote, shared computing environment to teach [the HPC Carpentry core curriculum](./02-curriculum.md) with confidence.
+* Have sufficient experience of working in a remote, shared computing environment to teach [the HPC Carpentry core curriculum](../episodes/01-curriculum.md) with confidence.
 
 Instructors are _not_ required to have any experience of administering a high-performance computing cluster.
 
@@ -20,11 +20,11 @@ Instructors are _not_ required to have any experience of administering a high-pe
 
 Onboarding provides:
 
-* [An overview of the HPC Carpentry core curriculum](./01-curriculum.md)
-* [Introduction to the central teaching example used in a workshop](./02-amdahl.md)
-* [Guidance for Instructors planning and preparing to teach an HPC Carpentry workshop](./03-pre-workshop.md)
-* [Advice for managing a fork of an HPC Carpentry lesson](./04-forking.md)
-* [Guidance on adapting HPC Carpentry lessons to reflect a local/institutional cluster configuration](./05-localization.md)
+* [An overview of the HPC Carpentry core curriculum](../episodes/01-curriculum.md)
+* [Introduction to the central teaching example used in a workshop](../episodes/02-amdahl.md)
+* [Guidance for Instructors planning and preparing to teach an HPC Carpentry workshop](../episodes/03-pre-workshop.md)
+* [Advice for managing a fork of an HPC Carpentry lesson](../episodes/04-forking.md)
+* [Guidance on adapting HPC Carpentry lessons to reflect a local/institutional cluster configuration](../episodes/05-localization.md)
 
 The first few episodes provide a general overview of the workshop curriculum: what HPC Carpentry teaches, why and how.
 
