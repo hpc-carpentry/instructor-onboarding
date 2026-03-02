@@ -20,11 +20,11 @@ Instructors are _not_ required to have any experience of administering a high-pe
 
 Onboarding provides:
 
-* [An overview of the HPC Carpentry core curriculum](./02-curriculum.md)
-* [Introduction to the central teaching example used in a workshop](./03-amdahl.md)
-* [Guidance for Instructors planning and preparing to teach an HPC Carpentry workshop](./04-pre-workshop.md)
-* [Advice for managing a fork of an HPC Carpentry lesson](./05-forking.md)
-* [Guidance on adapting HPC Carpentry lessons to reflect a local/institutional cluster configuration](./06-localization.md)
+* [An overview of the HPC Carpentry core curriculum](./01-curriculum.md)
+* [Introduction to the central teaching example used in a workshop](./02-amdahl.md)
+* [Guidance for Instructors planning and preparing to teach an HPC Carpentry workshop](./03-pre-workshop.md)
+* [Advice for managing a fork of an HPC Carpentry lesson](./04-forking.md)
+* [Guidance on adapting HPC Carpentry lessons to reflect a local/institutional cluster configuration](./05-localization.md)
 
 The first few episodes provide a general overview of the workshop curriculum: what HPC Carpentry teaches, why and how.
 
