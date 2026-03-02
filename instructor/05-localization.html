@@ -399,19 +399,6 @@ are often small strings of one or a few words, representing hostnames,
 commands, arguments, URLs, and similar items. Snippets are larger text
 files that are inserted as-is into the Markdown source during the
 rendering process.</p>
-<div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>You cannot use the special syntax for any of the callouts available
-in the Carpentry Workbench; however, you can use any other Markdown
-formatting options.</p>
-</div>
-</div>
-</div>
 </section><section><h2 class="section-heading" id="generating-a-customization-directory">Generating a customization directory<a class="anchor" aria-label="anchor" href="#generating-a-customization-directory"></a></h2>
 <hr class="half-width"><p>The customization files reside in the
 <code>episodes/files/customization</code> subfolder. There you can find
@@ -452,9 +439,9 @@ shell from which you start R to build the lesson material.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> export HPC_CARPENTRY_CUSTOMIZATION=episodes/files/customization/YourCustomizationDirectory/_config_options.yml</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> export HPC_CARPENTRY_CUSTOMIZATION=/full/path/to/episodes/files/customization/YourCustomizationDirectory/_config_options.yml</span></code></pre>
 </div>
-<div id="callout2" class="callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -489,7 +476,7 @@ tab.</p>
 <code>_config_options.yml</code> file of your customization. You do not
 have to redefine all variables, so your customization config can list
 only the variables you want to change in the lesson.</p>
-<div id="callout3" class="callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
