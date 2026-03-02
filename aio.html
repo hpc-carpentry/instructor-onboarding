@@ -1132,9 +1132,10 @@ affects how you can continue working with upstream versions of materials
 when proposing changes or improvements; you will not be able to base
 these proposals off your customized <code>main</code> branch since most
 customizations should remain within your downstream repository.</p>
-<p>Nevertheless, it embodies Carpentries’ spirit that materials undergo
-constant improvement through community contributions—these are
-explicitly welcomed!</p>
+<p>Nevertheless, it embodies the culture of contribution that The
+Carpentries hopes to foster that materials undergo constant improvement
+through community feedback – your contributions are explicitly
+welcomed!</p>
 <div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1150,9 +1151,9 @@ from general content customization.</p>
 </div>
 </div>
 <p>To maintain easy access to future updates from upstream’s
-<code>main</code> branch—which contains ongoing changes and
-additions—you need first to add HPC Carpentry’s official repository as
-an additional remote in your cloned copy:</p>
+<code>main</code> branch – which contains ongoing changes and additions
+– you need first to add HPC Carpentry’s official repository as an
+additional remote in your cloned copy:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1166,8 +1167,8 @@ tracking branch (e.g., <code>upstream-main</code>) based on upstream’s
 </h3>
 <pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> upstream-main upstream/main</span></code></pre>
 </div>
-<p>You can then easily create branches containing suggested
-contributions intended for pull requests back into upstream using:</p>
+<p>You can then create branches containing suggested contributions
+intended for pull requests back into upstream using:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1257,10 +1258,10 @@ any links that you are not going to use.
 <span class="callout-header">Caution</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>The customization infrastructure is <strong>not meant</strong> for
+<p>The customization infrastructure is <strong>not intended</strong> for
 changing or adding <strong>significant amounts of additional course
-content</strong>. You should always check whether the customizations you
-perform <strong>serve to reduce cognitive load during and after the
+content</strong>. You should always consider whether the customizations
+you make <strong>serve to reduce cognitive load during and after the
 workshop</strong>.</p>
 </div>
 </div>
@@ -1269,12 +1270,11 @@ workshop</strong>.</p>
 </h2>
 <hr class="half-width">
 <p>The customization framework for the <a href="https://carpentries-incubator.github.io/hpc-intro/" class="external-link">Introduction
-to HPC</a> lesson extends the standard [Carpentry
-Workbench][carpentry-workbench] infrastructure and works by using a
-<strong>base template</strong> and a <strong>customization
-template</strong>. These templates are directories containing
-configuration and content text files that will be used when rendering
-the lesson material.</p>
+to HPC</a> lesson extends the standard <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Carpentries
+Workbench</a> infrastructure and works by using a <strong>base
+template</strong> and a <strong>customization template</strong>. These
+templates are directories containing configuration and content source
+files that will be used when rendering the lesson material.</p>
 <p>Customization can be done in two different ways:</p>
 <ol style="list-style-type: decimal">
 <li>By redefining a variable that is used in one or more places of the
@@ -1282,16 +1282,16 @@ episode markdown, or</li>
 <li>By providing a snippet file with the same name as the one used in
 the episodes.</li>
 </ol>
-<p>The <strong>base template</strong> needs to define all
-<em>variables</em> and <em>snippets</em> used in the episodes. The
-<strong>customization template</strong> can then selectively override
-any of those variables. The lesson material already provides a complete
-base template with <code>HPCC_MagicCastle_slurm</code>, so you only need
-to create a customization template for your local adaptations. Variables
-are often small strings of one or a few words, representing hostnames,
-commands, arguments, URLs, and similar items. Snippets are larger text
-files that are inserted as-is into the Markdown source during the
-rendering process.</p>
+<p>The <strong>base template</strong> defines all <em>variables</em> and
+<em>snippets</em> used in the episodes. The <strong>customization
+template</strong> can then selectively override any of those variables.
+The lesson material already provides a complete base template with
+<code>HPCC_MagicCastle_slurm</code>, so you only need to create a
+customization template for your local adaptations. Variables are often
+small strings of one or a few words, representing hostnames, commands,
+arguments, URLs, and similar items. Snippets are larger text files that
+are inserted as-is into the Markdown source during the rendering
+process.</p>
 </section><section><h2 class="section-heading" id="generating-a-customization-directory">Generating a customization directory<a class="anchor" aria-label="anchor" href="#generating-a-customization-directory"></a>
 </h2>
 <hr class="half-width">
@@ -1300,45 +1300,60 @@ rendering process.</p>
 two subdirectories:</p>
 <ol style="list-style-type: decimal">
 <li>
-<code>HPCC_MagicCastle_slurm</code>, and</li>
+<code>HPCC_MagicCastle_slurm</code>, the <strong>base
+template</strong> from HPC Carpentry, and</li>
 <li>
-<code>Ghastly_Mistakes</code>.</li>
+<code>Ghastly_Mistakes</code>, an <strong>example customization
+template</strong>.</li>
 </ol>
-<p>The former is the <strong>base template</strong> provided by the HPC
-Carpentry organization that you can, and most likely should, use as the
-base for your customization. It contains the customization for the
-cloud-based cluster installation based on Magic Castle using the Slurm
-scheduler. The latter is an example customization for reference that
-contains values different from the base template to check whether the
-customization works in general.</p>
-<p>To start your first customization, you have to create a new
-subdirectory for the configuration and snippets.</p>
+<p>We recommend using <code>HPCC_MagicCastle_slurm</code> as the base
+for your customization. It contains the customization for a cloud-based
+cluster installation, based on Magic Castle using the Slurm scheduler.
+The files in <code>Ghastly_Mistakes/</code> provide an example
+customization for reference. They contain values different from the base
+template, and are sometimes used to check whether the customization
+works in general.</p>
+<p>To start your first customization, create a new subdirectory for the
+configuration and snippets.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> cd episodes/files/customization</span>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="ex">$</span> mkdir YourCustomizationDirectory</span></code></pre>
 </div>
-<p>You can do this either by creating a directory manually, or by
-including a Git submodule based off the [customization
-template][customization-template] provided by the HPC Carpentry.</p>
-<p>This directory has to contain the configuration file
-<code>_config_options.yml</code>. The minimal configuration contains the
-variable <code>snippets</code>, set to the directory name of your
-customization.</p>
+<!-- You can do this either by creating a directory manually, or by including a Git submodule based off the [customization template][customization-template] provided by HPC Carpentry. --->
+<p>Add a minimal configuration file <code>_config_options.yml</code> to
+this directory, containing the variable <code>snippets</code>, set to
+the directory name of your customization:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">snippets</span><span class="kw">:</span><span class="at"> </span><span class="st">"YourCustomizationDirectory"</span></span></code></pre>
+</div>
+<p>And create an empty <code>snippets</code> directory, to be populated
+with more customizations later:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># in YourCustomizationDirectory...</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">mkdir</span> snippets</span></code></pre>
+</div>
 </section><section><h2 class="section-heading" id="enabling-the-customization-in-the-github-actions-workflow">Enabling the customization in the GitHub Actions workflow<a class="anchor" aria-label="anchor" href="#enabling-the-customization-in-the-github-actions-workflow"></a>
 </h2>
 <hr class="half-width">
-<p>To enable the use of this customization, you have to set the
-environment variable <code>HPC_CARPENTRY_CUSTOMIZATION</code> to the
-location of the customization configuration during the build
-process.</p>
-<p>When you build the material locally, you can set the variable in the
-shell from which you start R to build the lesson material.</p>
-<div class="codewrapper sourceCode" id="cb2">
+<p>To enable the use of this customization, set the environment variable
+<code>HPC_CARPENTRY_CUSTOMIZATION</code> to the location of the
+customization configuration during the build process.</p>
+<div class="section level3">
+<h3 id="local-builds">Local builds<a class="anchor" aria-label="anchor" href="#local-builds"></a>
+</h3>
+<p>For local builds, set the variable in the shell from which you start
+R to build the lesson material (or from a Terminal if working in an
+IDE).</p>
+<div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> export HPC_CARPENTRY_CUSTOMIZATION=/full/path/to/episodes/files/customization/YourCustomizationDirectory/_config_options.yml</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> export HPC_CARPENTRY_CUSTOMIZATION=/full/path/to/episodes/files/customization/YourCustomizationDirectory/_config_options.yml</span></code></pre>
 </div>
 <div id="callout1" class="callout">
 <div class="callout-square">
@@ -1353,14 +1368,18 @@ after changing anything in the customization, you need to <strong>reset
 the site</strong> by calling <code>sandpaper::reset_site()</code> and
 <strong>trigger the build</strong> with
 <code>sandpaper::build_lesson()</code>.</p>
-<div class="codewrapper sourceCode" id="cb3">
+<div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> r <span class="at">-e</span> <span class="st">"sandpaper::reset_site();sandpaper::build_lesson()"</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> r <span class="at">-e</span> <span class="st">"sandpaper::reset_site();sandpaper::build_lesson()"</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
+</div>
+<div class="section level3">
+<h3 id="on-github">On GitHub<a class="anchor" aria-label="anchor" href="#on-github"></a>
+</h3>
 <p>To set this during the GitHub Actions workflow, you need to select
 <em>Secrets and variables</em> in the left menu of the <em>Settings</em>
 tab. Then you select <em>Actions</em> and select the <em>Variables</em>
@@ -1370,6 +1389,7 @@ tab.</p>
 <strong>Repository variable</strong>.</p>
 <figure><img src="fig/hpc-intro_actions_new_repository_variable.png" alt="Adding a new repository secret" class="figure mx-auto d-block"><div class="figcaption">Adding a new repository secret</div>
 </figure><p>This will then be passed to the build workflow.</p>
+</div>
 </section><section><h2 class="section-heading" id="customize-via-in-paragraph-variables">Customize via in-paragraph variables<a class="anchor" aria-label="anchor" href="#customize-via-in-paragraph-variables"></a>
 </h2>
 <hr class="half-width">
@@ -1377,6 +1397,15 @@ tab.</p>
 <code>_config_options.yml</code> file of your customization. You do not
 have to redefine all variables, so your customization config can list
 only the variables you want to change in the lesson.</p>
+<p>For example, you could adjust the hostname of the login node
+(referred to with <code>config$remote$login</code> in the lesson source)
+by adding the following to your <code>_config_options.yml</code>:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">remote</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="at">  </span><span class="fu">login</span><span class="kw">:</span><span class="at"> </span><span class="st">"login.YourCustomization.org"</span></span></code></pre>
+</div>
 <div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1384,8 +1413,9 @@ only the variables you want to change in the lesson.</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>The hierarchy in variable names is important. Please ensure that you
-retain the variable hierarchy for the variables you do redefine.</p>
+<p>The hierarchy in variable names is important (e.g. <code>login</code>
+within <code>remote</code>, above). Please ensure that you retain the
+variable hierarchy for the variables you do redefine.</p>
 </div>
 </div>
 </div>
@@ -1396,10 +1426,10 @@ retain the variable hierarchy for the variables you do redefine.</p>
 You can generate the current list of supported snippets in the
 <code>HPCC_MagicCastle_slurm/snippets</code> directory yourself like
 this:</p>
-<div class="codewrapper sourceCode" id="cb4">
+<div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> HPCC_MagicCastle_slurm/snippets $ find . <span class="at">-type</span> f</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> HPCC_MagicCastle_slurm/snippets $ find . <span class="at">-type</span> f</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1433,8 +1463,22 @@ snippet files correspond to the episode names they are used in.</p>
 <p>They are usually the output from corresponding commands in the
 episodes and should be regenerated with the corresponding commands on
 the HPC system you customize for.</p>
-<p>You only need to create the files (and subdirectories) for the
-snippets that you want to override.</p>
+<p>Create the files (and subdirectories) for the snippets that you want
+to override. For example, to add your own snippet with <a href="https://carpentries-incubator.github.io/hpc-intro/13-scheduler.html#running-a-batch-job" class="external-link">the
+output of <code>sbatch</code> for the <code>scheduler</code> episode</a>
+(<a href="https://github.com/carpentries-incubator/hpc-intro/blob/main/episodes/13-scheduler.Rmd" class="external-link">page
+source</a>), create a <code>snippets/scheduler</code> directory and add
+a <code>basic-job-script.Rmd</code> file with your customized
+contents:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="in">```output</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="in">Submitted batch job 12345</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+</div>
+<p>This snippet will now be used in your lesson instead of the default
+from the <code>HPCC_MagicCastle_slurm</code> configuration.</p>
 <div id="adding-additional-content" class="callout caution">
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
