@@ -21,7 +21,7 @@ exercises: 2 # exercise time in minutes # FIXME
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::: caution
-The customization infrastructure is **not meant** for changing or adding **signification amount of additional course content**.
+The customization infrastructure is **not meant** for changing or adding **significant amounts of additional course content**.
 You should always check whether the customizations you perform **serves the reduction of cognitive load during and after the workshop**.
 :::::::::::::::::
 
@@ -33,16 +33,12 @@ These templates are directories containing configuration and content text files 
 Customization can be done in two different ways:
 
 1. By re-defining a variable that is used in one or more places of the episode markdown, or
-2. By providing a snippet file with the same name as in the 
+2. By providing a snippet file with the same name as in that used in the episode markdown
 
 The **base template** needs to define all *variables* and *snippets* used in the episodes.
 The **customization template** can then override any of those variables selectively.
 Variables are often small string of one or a few more words, representing hostnames, commands, arguments, URLs and the like.
 Snippets are larger text files that are inserted as is into the markdown source during the rendering process.
-
-:::::::: callout
-You cannot use the special syntax for any of the callouts available in the Carpentry Workbench, however, you can use any other Markdown formatting options.
-::::::::::::::::
 
 ## Generating a customization directory
 
@@ -71,14 +67,14 @@ The minimal configuration contains the variable `snippets`, set to the directory
 
 To enable the use of this customization you have to set the environment variable `HPC_CARPENTRY_CUSTOMIZATION` to the location of the customization configuration during the build process.
 
-When you are building the material locally you can just set the variable in your building shell from which you start R to build the lesson material.
+When you are building the material locally you can just set the variable in the shell from which you start R to build the lesson material.
 
 ```sh
-$ export HPC_CARPENTRY_CUSTOMIZATION=episodes/files/customization/YourCustomizationDirectory/_config_options.yml
+$ export HPC_CARPENTRY_CUSTOMIZATION=/full/path/to/episodes/files/customization/YourCustomizationDirectory/_config_options.yml
 ```
 
 :::::::::: callout
-Currently, the standard build process does not recognize changes in the customization configuration or the snippets. To get a clean build after changing anything in the customization, you need to **reset the site** with calling `sandpaper::reset_site()` and **trigger the build** with `sandpaper::build_lesson()`.
+Currently, the standard build process does not recognize changes in the customization configuration or the snippets. To get a clean build after changing anything in the customization, you need to **reset the site** by calling `sandpaper::reset_site()` and **trigger the build** with `sandpaper::build_lesson()`.
 
 ```sh
 $ r -e "sandpaper::reset_site();sandpaper::build_lesson()"
