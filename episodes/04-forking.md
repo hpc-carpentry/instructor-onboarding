@@ -81,13 +81,15 @@ Save this configuration; GitHub should begin deploying your rendered lesson auto
 
 Since workflows are enabled for your `main` branch without further intervention needed on your part, it is advisable to use this `main` branch for customization purposes. However, this affects how you can continue working with upstream versions of materials when proposing changes or improvements; you will not be able to base these proposals off your customized `main` branch since most customizations should remain within your downstream repository.
 
-Nevertheless, it embodies Carpentries' spirit that materials undergo constant improvement through community contributions—these are explicitly welcomed!
+Nevertheless, it embodies the culture of contribution that The Carpentries hopes to foster that materials undergo constant improvement through community feedback -- your contributions are explicitly welcomed!
 
 :::::::::: callout
+
 To facilitate cherry-picking changes from your customized `main` branch into branches intended for pull requests back upstream, keep individual commits small, self-contained, and distinct from general content customization.
+
 ::::::::::::::::::
 
-To maintain easy access to future updates from upstream's `main` branch—which contains ongoing changes and additions—you need first to add HPC Carpentry's official repository as an additional remote in your cloned copy:
+To maintain easy access to future updates from upstream's `main` branch -- which contains ongoing changes and additions -- you need first to add HPC Carpentry's official repository as an additional remote in your cloned copy:
 
 ```sh
 $ git remote add upstream https://github.com/carpentries-incubator/hpc-intro.git
@@ -99,7 +101,7 @@ With access established via `upstream`, create a new tracking branch (e.g., `ups
 $ git switch -c upstream-main upstream/main
 ```
 
-You can then easily create branches containing suggested contributions intended for pull requests back into upstream using:
+You can then create branches containing suggested contributions intended for pull requests back into upstream using:
 
 ```sh
 $ git switch upstream-main
@@ -111,7 +113,9 @@ $ git switch <your-feature-branch>
 Keep both `your-feature-branch` and `main` updated by continuously rebasing against incoming changes from upstream's repository.
 
 :::::::::: callout
+
 The fewer modifications are made relative to official source material episodes, the easier maintenance will be when keeping content up-to-date.
+
 ::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
