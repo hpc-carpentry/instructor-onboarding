@@ -1479,6 +1479,116 @@ contents:</p>
 </div>
 <p>This snippet will now be used in your lesson instead of the default
 from the <code>HPCC_MagicCastle_slurm</code> configuration.</p>
+<p>When we have finished, our
+<code>episodes/files/customization/YourCustomizationDirectory/</code>
+directory has the following contents:</p>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>YourCustomizationDirectory
+├── _config_options.yml
+└── snippets
+    └── scheduler
+        └── basic-job-script.Rmd</code></pre>
+</div>
+<p>Contents of <code>_config_options.yml</code>:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="fu">snippets</span><span class="kw">:</span><span class="at"> </span><span class="st">"YourCustomizationDirectory"</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="fu">remote</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="at">  </span><span class="fu">login</span><span class="kw">:</span><span class="at"> </span><span class="st">"login.YourCustomization.org"</span></span></code></pre>
+</div>
+<p>Contents of <code>snippets/scheduler/basic-job-script.Rmd</code>:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="in">```output</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="in">Submitted batch job 12345</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+</div>
+<div id="make-more-customizations" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<span class="callout-header">Challenge</span>
+<div id="make-more-customizations" class="callout-inner">
+<h3 class="callout-title">Make More Customizations</h3>
+<div class="callout-content">
+<p>Repeating the steps above, make some more customizations to your fork
+of <code>hpc-intro</code>.</p>
+<ol style="list-style-type: decimal">
+<li>Customize the shell prompt displayed in the lesson for the
+<em>local</em> and <em>remote</em> systems, by overriding the values of
+two more variables in <code>_config_options.yml</code>.</li>
+<li>Modify a copy of the template at
+<code>episodes/files/customization/HPCC_MagicCastle_slurm/snippets/modules/available-modules.Rmd</code>
+to include some output for <code>module avail</code> on your cluster,
+then save it to your own
+<code>snippets/modules/available-modules.Rmd</code> file. Which page of
+your lesson will this change affect?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<ol style="list-style-type: decimal">
+<li>
+<p>Add customized prompts to
+<code>YourCustomizationDirectory/_config_options.yml</code>:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">YAML<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode yaml" tabindex="0"><code class="sourceCode yaml"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">local</span><span class="kw">:</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="at">  </span><span class="fu">prompt</span><span class="kw">:</span><span class="at"> </span><span class="st">"[dorothy@kansas:~]$"</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="fu">remote</span><span class="kw">:</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="at">  </span><span class="fu">prompt</span><span class="kw">:</span><span class="at"> </span><span class="st">"[dorothy@yellow-brick-road ~]$"</span></span></code></pre>
+</div>
+</li>
+<li>
+<p>Create a new directory,
+<code>YourCustomizationDirectory/snippets/modules</code>, and add a new
+file to it, <code>available-modules.Rmd</code>:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">MARKDOWN<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode markdown" tabindex="0"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="kw">`</span><span class="ex">r</span> config<span class="va">$remote$prompt</span><span class="kw">`</span> module avail <span class="kw">|</span> <span class="fu">less</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="in">```output</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="in">~~~ /cvmfs/pilot.eessi-hpc.org/2020.12/software/x86_64/amd/zen2/modules/all ~~~</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="in">MyCustomModule/3.16.4-GCCcore-x.y.z             Modulezz/v2026-custom</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="in">[removed most of the output here for clarity]</span></span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a><span class="in">Where:</span></span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a><span class="in">L:        Module is loaded</span></span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a><span class="in">D:        Default Module</span></span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a><span class="in">Aliases exist: foo/1.2.3 (1.2) means that</span></span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a><span class="in">            "module load foo/1.2" will load foo/1.2.3</span></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a><span class="in">Use "module spider" to find all possible modules and extensions.</span></span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a><span class="in">Use "module keyword key1 key2 ..." to search for all possible modules matching</span></span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a><span class="in">any of the "keys".</span></span>
+<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a><span class="in">```</span></span></code></pre>
+</div>
+<p>When built into your lesson, this snippet will be inserted into the
+<em>Listing Available Modules</em> subsection of the <em>Accessing
+software via Modules</em> episode of the lesson (<a href="https://carpentries-incubator.github.io/hpc-intro/15-modules.html#listing-available-modules" class="external-link">location
+in the central version of the lesson for reference</a>).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
 <div id="adding-additional-content" class="callout caution">
 <div class="callout-square">
 <i class="callout-icon" data-feather="alert-triangle"></i>
