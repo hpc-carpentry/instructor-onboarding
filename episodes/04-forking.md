@@ -1,14 +1,14 @@
 ---
-title: "Forking the *Introduction to HPC* repository"
+title: "Forking the *Introduction to HPC* Repository"
 teaching: 10 # teaching time in minutes # FIXME
 exercises: 2 # exercise time in minutes # FIXME
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- What are the reasons for creating a fork of the material.
-- What is the process needed to prepare and maintain a fork of the material.
-- How can I still contribute back to upstream from a customized fork.
+- What are the reasons for creating a fork of the material?
+- What is the process required to prepare and maintain a fork of the material?
+- How can I contribute back to upstream from a customized fork?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -16,119 +16,108 @@ exercises: 2 # exercise time in minutes # FIXME
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Understand the necessity of forking the material.
-- Understand the necessary forking workflow.
-- Decide on a branching model that supports customization as well as proposing updates to the upstream.
+- Familiarize yourself with the forking workflow.
+- Decide on a branching model that supports customization as well as proposing updates to upstream.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Creating a fork
+## Creating a Fork
 
-To lower the cognitive load of learners in your workshop by bringing the lesson material and the experience during the workshop closer together, you may want to customize the lesson material.
-If you need to customize the lesson material prior to a workshop, this can only be done on a separate fork of the lesson material.
+To reduce cognitive load for learners during your workshop, you may want to customize the lesson materials. If customization is necessary before a workshop, it must be done on a separate fork of the lesson materials.
 
 ::::::::::::: prereq
-The lesson material is hosted on Github and the automatic build infrastructure realized through Github actions.
-To use the same workflow described in this episode you will need an **active Github account**.
+The lesson materials are hosted on GitHub, utilizing an automatic build infrastructure powered by GitHub Actions. To follow the workflow described in this episode, you will need an **active GitHub account**.
 
-Support for other Git Hostings Services and their CI infrastructure is currently not available.
+Support for other Git hosting services and their CI infrastructures is currently not available.
 ::::::::::::::::::::
 
-![The pull-down menu of the fork lets you start to create a fork](fig/hpc-intro_create_fork.png)
+![The pull-down menu next to the fork button initiates the forking process](fig/hpc-intro_create_fork.png)
 
-Using the pull-down menu next the fork button lets you start the forking process.
+Using the pull-down menu next to the fork button allows you to start creating a fork.
 
-![Select the location of the fork and enable forking all branches of the repository](fig/hpc-intro_create_fork_details.png)
+![Select where to create your fork and enable forking all branches of the repository](fig/hpc-intro_create_fork_details.png)
 
-The **owner** determines the URL of the generated material.
-Choosing a location that resembles the hosting organization will help recognizability and findability of your material.
-If the hosting organization needs multiple customized versions of the material (e.g., customization to multiple different HPC systems), you can customized the **name** of the forked repository for distinction.
+The **owner** determines the URL of your generated materials. Choosing a location that reflects your hosting organization enhances recognizability and findability. If multiple customized versions are needed (e.g., adaptations for different HPC systems), consider customizing the **name** of your forked repository for clarity.
 
 ::::::::: callout
-In order to fork the full auto-generate infrastructure you need to make sure that the "Copy the `main` branch only" option is **deselected** before creating the fork.
+To ensure you replicate all auto-generated infrastructure, make sure that "Copy only `main` branch" option is **deselected** before creating your fork.
 :::::::::::::::::
 
-## Enabling the Github Actions Workflows
+## Enabling GitHub Actions Workflows
 
-As mentioned before, the repository for the lesson material contains Github Actions workflows.
-As these can contain commands, then executed on your behalf, those workflows are disabled by default.
-To enable them you have to select the **Actions** tab.
+As mentioned earlier, this repository contains GitHub Actions workflows. Since these workflows can execute commands on your behalf, they are disabled by default. To enable them, navigate to the **Actions** tab.
 
-![Warning message of disabled workflows shown after selecting the Actions tab.](fig/hpc-intro_workflows_disabled_message.png)
+![Warning message indicating disabled workflows after selecting the Actions tab.](fig/hpc-intro_workflows_disabled_message.png)
 
 ::::::::: caution
-As with all security warnings, you should **verify** what the code contained in the Github Actions Workflow will do **or trust** the providing organization (in this case the HPC Carpentry) to ensure no malicious code is executed on your behalf.
+As with all security warnings, you should **verify** what actions will be performed by any code contained within GitHub Actions workflows or **trust** that HPC Carpentry has ensured no malicious code will run on your behalf.
 :::::::::::::::::
 
-After selecting **I understand my workflows, go ahead and enable them**, get to the workflow overview of the Actions tab.
-There you will see that the three workflows are available are all disabled.
+After selecting **I understand my workflows; go ahead and enable them**, you'll arrive at an overview page where three workflows will be listed as disabled.
 
 ![](fig/hpc-intro_actions_tab_workflows_disabled.png)
 
-When selecting one of them, you will see an info message, letting you know why the workflow was disabled.
+By selecting one of them, you'll see an informational message explaining why it was disabled.
 
-![Info message about the disabled workflow](fig/hpc-intro_actions_tab_workflows_disabled_info.png)
+![Info message regarding disabled workflow](fig/hpc-intro_actions_tab_workflows_disabled_info.png)
 
-Click **Enable Workflow** for all three workflows.
-Then select the **01 Build and Deploy Site** workflow.
+Click **Enable Workflow** for each of these three workflows. Then select the **01 Build and Deploy Site** workflow.
 
-There you can see the **Run workflow** button to run the first build manually and test the infrastructure.
+Here, you'll find a **Run Workflow** button which allows you to manually initiate your first build and test out the infrastructure.
 
-![Empty workflow history before the first manual run.](fig/hpc-intro_actions_tab_workflows_manual_run.png)
+![Empty workflow history prior to first manual run.](fig/hpc-intro_actions_tab_workflows_manual_run.png)
 
-After the first workflow runs through, you have verified that the overall infrastructure is working.
-Your rendered material will then be available at `https://<your-owner-handle>.github.io/<hpc-intro-repo-name>`.
+Once this initial workflow runs successfully, you've verified that everything is functioning correctly. Your rendered materials will then be accessible at `https://<your-owner-handle>.github.io/<hpc-intro-repo-name>`.
 
-## Enabling Github pages
+## Enabling GitHub Pages
 
-Before the rendered webpages are published, you need to enable Github Pages.
-In your **Settings** tab, select **Github Pages** in the left side menu.
-There enable **Deploy from branch** and select the **gh-pages** branch.
+Before publishing rendered web pages, you must enable GitHub Pages. In your **Settings** tab, select **GitHub Pages** from the left-side menu. Enable **Deploy from branch**, then choose the **gh-pages** branch.
 
-Save the configuration and Github should start deploying your rendered lesson.
+Save this configuration; GitHub should begin deploying your rendered lesson automatically.
 
-![Github Pages settings](fig/hpc-intro-github-pages.png)
+![GitHub Pages settings](fig/hpc-intro-github-pages.png)
 
-## Contributing changes back to the upstream repository
+## Contributing Changes Back to Upstream Repository
 
-As the workflows are enabled for the `main` branch without further intervention by you, it is recommended to use the `main` branch for your customization.
-However, this impacts how you can keep working with the **upstream** version of the material.
-When wanting to propose changes and improvements to the upstream repository, you will **not be able** to base these off your customized `main` branch, because the majority of your customizations should remain in your customized downstream repository.
-Nevertheless, the spirit of the Carpentries is that the material should undergo constant improvement and community contributions are explicitly welcome.
+Since workflows are enabled for your `main` branch without further intervention needed on your part, it is advisable to use this `main` branch for customization purposes. However, this affects how you can continue working with upstream versions of materials when proposing changes or improvements; you will not be able to base these proposals off your customized `main` branch since most customizations should remain within your downstream repository.
+
+Nevertheless, it embodies Carpentries' spirit that materials undergo constant improvement through community contributions—these are explicitly welcomed!
 
 :::::::::: callout
-To make it easier for you to cherry-pick changes from your customized `main` branch to a branch for a pull request to upstream, you should keep individual commits small, self-contained and separate from general content customization.
+To facilitate cherry-picking changes from your customized `main` branch into branches intended for pull requests back upstream, keep individual commits small, self-contained, and distinct from general content customization.
 ::::::::::::::::::
 
-To enable easy access to the upstream `main` branch---containing future changes and additions to the official lesson material---you first need to add the official HPC Carpentry repository as an additional remote to your cloned copy.
+To maintain easy access to future updates from upstream's `main` branch—which contains ongoing changes and additions—you need first to add HPC Carpentry's official repository as an additional remote in your cloned copy:
 
 ```sh
 $ git remote add upstream https://github.com/carpentries-incubator/hpc-intro.git
 ```
-With the official main HPC Carpentry repository available as `upstream` you can then create a branch (e.g., `upstream-main`) that tracks the `main` branch of the `upstream` repository.
+
+With access established via `upstream`, create a new tracking branch (e.g., `upstream-main`) based on upstream's `main`:
 
 ```sh
 $ git switch -c upstream-main upstream/main
 ```
-Any branches that form the basis for pull requests, containing your suggested contributions to the `upstream` repository can then easily be created with
+
+You can then easily create branches containing suggested contributions intended for pull requests back into upstream using:
 
 ```sh
 $ git switch upstream-main
-$ git pull --rebase # this branch will never contain any of your commits so --rebase would not be strictly necessary
+$ git pull --rebase # The --rebase isn't strictly necessary since this branch won't contain any commits from you. It should always support fast-forward merges.
 $ git branch <your-feature-branch>
 $ git switch <your-feature-branch>
 ```
 
-You can keep both, `your-feature-branch` and your `main` branch up to date by continuously rebasing it on any changes coming in from the `upstream` repository.
+Keep both `your-feature-branch` and `main` updated by continuously rebasing against incoming changes from upstream's repository.
 
 :::::::::: callout
-The fewer your changes are to the official episode source material the easier it will be to keep your material up to date.
+The fewer modifications are made relative to official source material episodes, the easier maintenance will be when keeping content up-to-date.
 ::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- When you use the cloud-based resources with the Magic Castle installation, you do not need to fork the material.
-- Fork the material when you want or need to customize the material.
-- Customization can only be configured for a specific site; different customizations require separate forks.
+- When using cloud-based resources with Magic Castle installation, there is no need to fork materials.
+- Fork if you wish or require customizations.
+- Customizations can only be configured per specific site; different customizations necessitate separate forks.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
-
