@@ -12,5 +12,6 @@ any links that you are not going to use.
 [magic-castle]: https://github.com/ComputeCanada/magic_castle
 [magic-castle-setup]: #
 [terraform]: https://developer.hashicorp.com/terraform
-
+[magic-castle]: https://github.com/ComputeCanada/magic_castle
+[customization-template]: https://github.com/hpc-carpentry/hpc-intro-customization-template
 
