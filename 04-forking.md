@@ -31,51 +31,9 @@ The lesson materials are hosted on GitHub, utilizing an automatic build infrastr
 Support for other Git hosting services and their CI infrastructures is currently not available.
 ::::::::::::::::::::
 
-![The pull-down menu next to the fork button initiates the forking process](fig/hpc-intro_create_fork.png)
-
-Using the pull-down menu next to the fork button allows you to start creating a fork.
-
-![Select where to create your fork and enable forking all branches of the repository](fig/hpc-intro_create_fork_details.png)
-
-The **owner** determines the URL of your generated materials. Choosing a location that reflects your hosting organization enhances recognizability and findability. If multiple customized versions are needed (e.g., adaptations for different HPC systems), consider customizing the **name** of your forked repository for clarity.
-
-::::::::: callout
-To ensure you replicate all auto-generated infrastructure, make sure that "Copy only `main` branch" option is **deselected** before creating your fork.
-:::::::::::::::::
-
-## Enabling GitHub Actions Workflows
-
-As mentioned earlier, this repository contains GitHub Actions workflows. Since these workflows can execute commands on your behalf, they are disabled by default. To enable them, navigate to the **Actions** tab.
-
-![Warning message indicating disabled workflows after selecting the Actions tab.](fig/hpc-intro_workflows_disabled_message.png)
-
-::::::::: caution
-As with all security warnings, you should **verify** what actions will be performed by any code contained within GitHub Actions workflows or **trust** that HPC Carpentry has ensured no malicious code will run on your behalf.
-:::::::::::::::::
-
-After selecting **I understand my workflows; go ahead and enable them**, you'll arrive at an overview page where three workflows will be listed as disabled.
-
-![](fig/hpc-intro_actions_tab_workflows_disabled.png)
-
-By selecting one of them, you'll see an informational message explaining why it was disabled.
-
-![Info message regarding disabled workflow](fig/hpc-intro_actions_tab_workflows_disabled_info.png)
-
-Click **Enable Workflow** for each of these three workflows. Then select the **01 Build and Deploy Site** workflow.
-
-Here, you'll find a **Run Workflow** button which allows you to manually initiate your first build and test out the infrastructure.
-
-![Empty workflow history prior to first manual run.](fig/hpc-intro_actions_tab_workflows_manual_run.png)
-
-Once this initial workflow runs successfully, you've verified that everything is functioning correctly. Your rendered materials will then be accessible at `https://<your-owner-handle>.github.io/<hpc-intro-repo-name>`.
-
-## Enabling GitHub Pages
-
-Before publishing rendered web pages, you must enable GitHub Pages. In your **Settings** tab, select **GitHub Pages** from the left-side menu. Enable **Deploy from branch**, then choose the **gh-pages** branch.
-
-Save this configuration; GitHub should begin deploying your rendered lesson automatically.
-
-![GitHub Pages settings](fig/hpc-intro-github-pages.png)
+:::::::::: callout
+The general process of forking a Carpentries Lesson is already [documented in the Carpentries Handbook](https://docs.carpentries.org/resources/curriculum/lesson-forks.html). Please consult this documentation to generate a fork in any of your workspaces.
+::::::::::::::::::
 
 ## Contributing Changes Back to Upstream Repository
 
@@ -83,11 +41,9 @@ Since workflows are enabled for your `main` branch without further intervention 
 
 Nevertheless, it embodies the culture of contribution that The Carpentries hopes to foster that materials undergo constant improvement through community feedback -- your contributions are explicitly welcomed!
 
-:::::::::: callout
+### Checking out the upstream `main` branch.
 
-To facilitate cherry-picking changes from your customized `main` branch into branches intended for pull requests back upstream, keep individual commits small, self-contained, and distinct from general content customization.
-
-::::::::::::::::::
+As you modify the `main` branch of your fork, you will not be able to branch off its modified state in order to contribute back to the upstream lesson material.
 
 To maintain easy access to future updates from upstream's `main` branch -- which contains ongoing changes and additions -- you need first to add HPC Carpentry's official repository as an additional remote in your cloned copy:
 
@@ -100,6 +56,8 @@ With access established via `upstream`, create a new tracking branch (e.g., `ups
 ```sh
 $ git switch -c upstream-main upstream/main
 ```
+
+### Creating a feature branch
 
 You can then create branches containing suggested contributions intended for pull requests back into upstream using:
 
@@ -117,6 +75,42 @@ Keep both `your-feature-branch` and `main` updated by continuously rebasing agai
 The fewer modifications are made relative to official source material episodes, the easier maintenance will be when keeping content up-to-date.
 
 ::::::::::::::::::
+
+### Cherry-picking modifications from your main branch 
+
+If you **keep commits focused** and **self-contained** on a specific contribution, or individual steps towards a larger contribution, it is easier to pick individual changes to be part of your feature branch.
+The process of integrating a specific commit of your `main` branch into your feature branch is called [**cherry-picking**](https://git-scm.com/docs/git-cherry-pick).
+
+To cherry-pick a specific commit first take a look at you modifications to your `main` branch.
+
+```sh
+$ git switch `main`
+$ git log --oneline
+```
+```output
+a1b2c3d Update head-node information
+e4f516a Clarify ssh-key generation
+f748a9b Add snippet on module output
+```
+
+Let's assume the example above, the commit `e4f516a` stipulates a clarification worth contributing back to the upstream lesson material.
+To integrate this commit into a new feature branch first create this branch.
+
+```sh
+$ git switch `upstream-main`
+$ git branch clarify-ssh-key-gen
+$ git switch clarify-ssh-key-gen
+```
+
+Now you can cherry-pick the specific commit into your feature branch
+
+```sh
+$ git cherry-pick e4f516a
+```
+
+:::::::: callout
+Double-check that your contribution is self-contained by building the lesson material from your feature branch. 
+::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
