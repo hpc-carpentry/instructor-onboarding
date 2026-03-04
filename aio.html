@@ -986,7 +986,7 @@ any links that you are not going to use.
 </div>
 </section></section><section id="aio-04-forking"><p>Content from <a href="04-forking.html">Forking the Introduction to HPC Repository</a></p>
 <hr>
-<p>Last updated on 2026-03-02 |
+<p>Last updated on 2026-03-04 |
 
         <a href="https://github.com/hpc-carpentry/instructor-onboarding/edit/main/episodes/04-forking.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1046,18 +1046,6 @@ is currently not available.</p>
 </div>
 </div>
 </div>
-<figure><img src="fig/hpc-intro_create_fork.png" alt="The pull-down menu next to the fork button initiates the forking process" class="figure mx-auto d-block"><div class="figcaption">The pull-down menu next to the fork button
-initiates the forking process</div>
-</figure><p>Using the pull-down menu next to the fork button allows you to start
-creating a fork.</p>
-<figure><img src="fig/hpc-intro_create_fork_details.png" alt="Select where to create your fork and enable forking all branches of the repository" class="figure mx-auto d-block"><div class="figcaption">Select where to create your fork and enable
-forking all branches of the repository</div>
-</figure><p>The <strong>owner</strong> determines the URL of your generated
-materials. Choosing a location that reflects your hosting organization
-enhances recognizability and findability. If multiple customized
-versions are needed (e.g., adaptations for different HPC systems),
-consider customizing the <strong>name</strong> of your forked repository
-for clarity.</p>
 <div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -1065,64 +1053,13 @@ for clarity.</p>
 <span class="callout-header">Callout</span>
 <div class="callout-inner">
 <div class="callout-content">
-<p>To ensure you replicate all auto-generated infrastructure, make sure
-that “Copy only <code>main</code> branch” option is
-<strong>deselected</strong> before creating your fork.</p>
+<p>The general process of forking a Carpentries Lesson is already <a href="https://docs.carpentries.org/resources/curriculum/lesson-forks.html" class="external-link">documented
+in the Carpentries Handbook</a>. Please consult this documentation to
+generate a fork in any of your workspaces.</p>
 </div>
 </div>
 </div>
-</section><section><h2 class="section-heading" id="enabling-github-actions-workflows">Enabling GitHub Actions Workflows<a class="anchor" aria-label="anchor" href="#enabling-github-actions-workflows"></a>
-</h2>
-<hr class="half-width">
-<p>As mentioned earlier, this repository contains GitHub Actions
-workflows. Since these workflows can execute commands on your behalf,
-they are disabled by default. To enable them, navigate to the
-<strong>Actions</strong> tab.</p>
-<figure><img src="fig/hpc-intro_workflows_disabled_message.png" alt="Warning message indicating disabled workflows after selecting the Actions tab." class="figure mx-auto d-block"><div class="figcaption">Warning message indicating disabled workflows
-after selecting the Actions tab.</div>
-</figure><div id="caution1" class="callout caution">
-<div class="callout-square">
-<i class="callout-icon" data-feather="alert-triangle"></i>
-</div>
-<span class="callout-header">Caution</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>As with all security warnings, you should <strong>verify</strong>
-what actions will be performed by any code contained within GitHub
-Actions workflows or <strong>trust</strong> that HPC Carpentry has
-ensured no malicious code will run on your behalf.</p>
-</div>
-</div>
-</div>
-<p>After selecting <strong>I understand my workflows; go ahead and
-enable them</strong>, you’ll arrive at an overview page where three
-workflows will be listed as disabled.</p>
-<figure><img src="fig/hpc-intro_actions_tab_workflows_disabled.png" class="figure mx-auto d-block"></figure><p>By selecting one of them, you’ll see an informational message
-explaining why it was disabled.</p>
-<figure><img src="fig/hpc-intro_actions_tab_workflows_disabled_info.png" alt="Info message regarding disabled workflow" class="figure mx-auto d-block"><div class="figcaption">Info message regarding disabled workflow</div>
-</figure><p>Click <strong>Enable Workflow</strong> for each of these three
-workflows. Then select the <strong>01 Build and Deploy Site</strong>
-workflow.</p>
-<p>Here, you’ll find a <strong>Run Workflow</strong> button which allows
-you to manually initiate your first build and test out the
-infrastructure.</p>
-<figure><img src="fig/hpc-intro_actions_tab_workflows_manual_run.png" alt="Empty workflow history prior to first manual run." class="figure mx-auto d-block"><div class="figcaption">Empty workflow history prior to first manual
-run.</div>
-</figure><p>Once this initial workflow runs successfully, you’ve verified that
-everything is functioning correctly. Your rendered materials will then
-be accessible at
-<code>https://&lt;your-owner-handle&gt;.github.io/&lt;hpc-intro-repo-name&gt;</code>.</p>
-</section><section><h2 class="section-heading" id="enabling-github-pages">Enabling GitHub Pages<a class="anchor" aria-label="anchor" href="#enabling-github-pages"></a>
-</h2>
-<hr class="half-width">
-<p>Before publishing rendered web pages, you must enable GitHub Pages.
-In your <strong>Settings</strong> tab, select <strong>GitHub
-Pages</strong> from the left-side menu. Enable <strong>Deploy from
-branch</strong>, then choose the <strong>gh-pages</strong> branch.</p>
-<p>Save this configuration; GitHub should begin deploying your rendered
-lesson automatically.</p>
-<figure><img src="fig/hpc-intro-github-pages.png" alt="GitHub Pages settings" class="figure mx-auto d-block"><div class="figcaption">GitHub Pages settings</div>
-</figure></section><section><h2 class="section-heading" id="contributing-changes-back-to-upstream-repository">Contributing Changes Back to Upstream Repository<a class="anchor" aria-label="anchor" href="#contributing-changes-back-to-upstream-repository"></a>
+</section><section><h2 class="section-heading" id="contributing-changes-back-to-upstream-repository">Contributing Changes Back to Upstream Repository<a class="anchor" aria-label="anchor" href="#contributing-changes-back-to-upstream-repository"></a>
 </h2>
 <hr class="half-width">
 <p>Since workflows are enabled for your <code>main</code> branch without
@@ -1136,20 +1073,12 @@ customizations should remain within your downstream repository.</p>
 Carpentries hopes to foster that materials undergo constant improvement
 through community feedback – your contributions are explicitly
 welcomed!</p>
-<div id="callout2" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<span class="callout-header">Callout</span>
-<div class="callout-inner">
-<div class="callout-content">
-<p>To facilitate cherry-picking changes from your customized
-<code>main</code> branch into branches intended for pull requests back
-upstream, keep individual commits small, self-contained, and distinct
-from general content customization.</p>
-</div>
-</div>
-</div>
+<div class="section level3">
+<h3 id="checking-out-the-upstream-main-branch-">Checking out the upstream <code>main</code> branch.<a class="anchor" aria-label="anchor" href="#checking-out-the-upstream-main-branch-"></a>
+</h3>
+<p>As you modify the <code>main</code> branch of your fork, you will not
+be able to branch off its modified state in order to contribute back to
+the upstream lesson material.</p>
 <p>To maintain easy access to future updates from upstream’s
 <code>main</code> branch – which contains ongoing changes and additions
 – you need first to add HPC Carpentry’s official repository as an
@@ -1167,6 +1096,10 @@ tracking branch (e.g., <code>upstream-main</code>) based on upstream’s
 </h3>
 <pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="at">-c</span> upstream-main upstream/main</span></code></pre>
 </div>
+</div>
+<div class="section level3">
+<h3 id="creating-a-feature-branch">Creating a feature branch<a class="anchor" aria-label="anchor" href="#creating-a-feature-branch"></a>
+</h3>
 <p>You can then create branches containing suggested contributions
 intended for pull requests back into upstream using:</p>
 <div class="codewrapper sourceCode" id="cb3">
@@ -1180,7 +1113,7 @@ intended for pull requests back into upstream using:</p>
 <p>Keep both <code>your-feature-branch</code> and <code>main</code>
 updated by continuously rebasing against incoming changes from
 upstream’s repository.</p>
-<div id="callout3" class="callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
@@ -1190,6 +1123,61 @@ upstream’s repository.</p>
 <p>The fewer modifications are made relative to official source material
 episodes, the easier maintenance will be when keeping content
 up-to-date.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="cherry-picking-modifications-from-your-main-branch">Cherry-picking modifications from your main branch<a class="anchor" aria-label="anchor" href="#cherry-picking-modifications-from-your-main-branch"></a>
+</h3>
+<p>If you <strong>keep commits focused</strong> and
+<strong>self-contained</strong> on a specific contribution, or
+individual steps towards a larger contribution, it is easier to pick
+individual changes to be part of your feature branch. The process of
+integrating a specific commit of your <code>main</code> branch into your
+feature branch is called <a href="https://git-scm.com/docs/git-cherry-pick" class="external-link"><strong>cherry-picking</strong></a>.</p>
+<p>To cherry-pick a specific commit first take a look at you
+modifications to your <code>main</code> branch.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="kw">`</span><span class="ex">main</span><span class="kw">`</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="ex">$</span> git log <span class="at">--oneline</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="output" tabindex="0"><code>a1b2c3d Update head-node information
+e4f516a Clarify ssh-key generation
+f748a9b Add snippet on module output</code></pre>
+</div>
+<p>Let’s assume the example above, the commit <code>e4f516a</code>
+stipulates a clarification worth contributing back to the upstream
+lesson material. To integrate this commit into a new feature branch
+first create this branch.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> git switch <span class="kw">`</span><span class="ex">upstream-main</span><span class="kw">`</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="ex">$</span> git branch clarify-ssh-key-gen</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="ex">$</span> git switch clarify-ssh-key-gen</span></code></pre>
+</div>
+<p>Now you can cherry-pick the specific commit into your feature
+branch</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> git cherry-pick e4f516a</span></code></pre>
+</div>
+<div id="callout3" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div class="callout-inner">
+<div class="callout-content">
+<p>Double-check that your contribution is self-contained by building the
+lesson material from your feature branch.</p>
 </div>
 </div>
 </div>
@@ -1214,6 +1202,7 @@ customizations necessitate separate forks.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use.
  -->
+</div>
 </section></section><section id="aio-05-localization"><p>Content from <a href="05-localization.html">Customize the lesson material</a></p>
 <hr>
 <p>Last updated on 2026-03-02 |
@@ -1679,8 +1668,8 @@ any links that you are not going to use.
   "url": "https://hpc-carpentry.github.io/instructor-onboarding/aio.html",
   "identifier": "https://hpc-carpentry.github.io/instructor-onboarding/aio.html",
   "dateCreated": "2026-02-19",
-  "dateModified": "2026-03-03",
-  "datePublished": "2026-03-03"
+  "dateModified": "2026-03-04",
+  "datePublished": "2026-03-04"
 }
 
   </script><script>
