@@ -1,5 +1,5 @@
 ---
-title: "Forking the *Introduction to HPC* Repository"
+title: "Forking the *Using HPC Systems* Repository"
 teaching: 10 # teaching time in minutes # FIXME
 exercises: 2 # exercise time in minutes # FIXME
 ---
@@ -17,7 +17,8 @@ exercises: 2 # exercise time in minutes # FIXME
 
 - Understand the necessity of forking the material.
 - Familiarize yourself with the forking workflow.
-- Decide on a branching model that supports customization as well as proposing updates to upstream.
+- Decide on a branching model that supports customization as well as proposing
+  updates to upstream.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -32,74 +33,136 @@ Support for other Git hosting services and their CI infrastructures is currently
 ::::::::::::::::::::
 
 :::::::::: callout
-The general process of forking a Carpentries Lesson is already [documented in the Carpentries Handbook](https://docs.carpentries.org/resources/curriculum/lesson-forks.html). Please consult this documentation to generate a fork in any of your workspaces.
+The general process of forking a Carpentries Workbench Lesson is already [documented in the Carpentries Handbook](https://docs.carpentries.org/resources/curriculum/lesson-forks.html). Please consult this documentation to generate a fork in any of your workspaces.
 ::::::::::::::::::
 
 ## Contributing Changes Back to Upstream Repository
 
 Since workflows are enabled for your `main` branch without further intervention needed on your part, it is advisable to use this `main` branch for customization purposes. However, this affects how you can continue working with upstream versions of materials when proposing changes or improvements; you will not be able to base these proposals off your customized `main` branch since most customizations should remain within your downstream repository.
 
-Nevertheless, it embodies the culture of contribution that The Carpentries hopes to foster that materials undergo constant improvement through community feedback -- your contributions are explicitly welcomed!
+Nevertheless, it embodies the culture of contribution that **The Carpentries** hopes to foster that materials undergo constant improvement through community feedback -- your contributions are explicitly welcomed!
 
-### Checking out the upstream `main` branch.
+The following workflow assumes that you have already forked the official HPC Carpentry repository on GitHub. When cloning a repository, Git automatically configures a remote named `origin`, which refers to the repository from which you cloned (in this case, your fork).
+
+The official HPC Carpentry repository must then be configured as an additional remote named `upstream`.
+
+### Configure the Git remotes
+First, clone your fork if you have not already done so:
+
+```sh
+$ git clone https://github.com/<YOUR_GITHUB_USERNAME>/hpc-intro.git
+$ cd hpc-intro
+```
+
+::: callout
+Replace `YOUR_GITHUB_USERNAME` with the actual GitHub username.
+:::
+
+Check the configured remotes:
+
+```sh
+$ git remote -v
+```
+
+You should see `origin` pointing to your fork on GitHub, which is the remote repository from which you cloned:
+
+```output
+origin	https://github.com/<YOUR_GITHUB_USERNAME>/hpc-intro.git (fetch)
+origin	https://github.com/<YOUR_GITHUB_USERNAME>/hpc-intro.git (push)
+```
+
+By default, cloning your fork configures only the `origin` remote. The official HPC Carpentry repository is not automatically configured as a remote. We therefore need to add it explicitly as `upstream`.
+
+### Configuring `upstream`, fetching and checking out the upstream `main` branch
 
 As you modify the `main` branch of your fork, you will not be able to branch off its modified state in order to contribute back to the upstream lesson material.
 
-To maintain easy access to future updates from upstream's `main` branch -- which contains ongoing changes and additions -- you need first to add HPC Carpentry's official repository as an additional remote in your cloned copy:
+To maintain easy access to future updates from upstream's `main` branch -- which contains ongoing changes and additions -- you first need to add HPC Carpentry's official repository as an additional remote in your cloned copy:
 
 ```sh
-$ git remote add upstream https://github.com/carpentries-incubator/hpc-intro.git
+$ git remote add upstream https://github.com/hpc-carpentry/hpc-intro.git
+# Verify the configured remotes
+$ git remote -v
 ```
 
-With access established via `upstream`, create a new tracking branch (e.g., `upstream-main`) based on upstream's `main`:
+The expected configuration looks like:
+
+```output
+origin	https://github.com/<YOUR_GITHUB_USERNAME>/hpc-intro.git (fetch)
+origin	https://github.com/<YOUR_GITHUB_USERNAME>/hpc-intro.git (push)
+upstream	https://github.com/hpc-carpentry/hpc-intro.git (fetch)
+upstream	https://github.com/hpc-carpentry/hpc-intro.git (push)
+```
+
+::: callout
+In this workflow, use `upstream` to retrieve official changes and `origin` to publish your contributions. Do not push directly to the official repository.
+:::
+
+Fetch the latest branches and commits from the official repository:
 
 ```sh
-$ git switch -c upstream-main upstream/main
+$ git fetch upstream
 ```
+
+The `upstream` remote provides access to the official HPC Carpentry repository. Fetching from this remote retrieves its latest branches and commits without modifying your local working branches.
+
+With access established via `upstream`, create a new local tracking branch (e.g., `upstream-main`) based on the official repository's `main` branch:
+
+```sh
+# `-c`: `--create` flag
+# Optional `-t`: `--track` flag
+$ git switch --create upstream-main --track upstream/main
+```
+
+The `upstream-main` branch now provides a clean starting point for preparing contributions to the official lesson repository.
 
 ### Creating a feature branch
 
 You can then create branches containing suggested contributions intended for pull requests back into upstream using:
 
 ```sh
+$ git fetch upstream
 $ git switch upstream-main
-$ git pull --rebase # The --rebase isn't strictly necessary since this branch won't contain any commits from you. It should always support fast-forward merges.
-$ git branch <your-feature-branch>
-$ git switch <your-feature-branch>
+$ git merge --ff-only upstream/main
+# `--ff-only`: update only when the local branch can be fast-forwarded.
+# This prevents accidental merge commits or divergent history.
+$ git switch --create <your-feature-branch>
 ```
 
-Keep both `your-feature-branch` and `main` updated by continuously rebasing against incoming changes from upstream's repository.
+Periodically fetch changes from the upstream repository and fast-forward your local `upstream-main` branch to incorporate them. When necessary, rebase your feature branches onto the latest `upstream/main` to incorporate upstream improvements. Keep your customized `main` branch separate from upstream contribution branches to prevent site-specific modifications from entering proposed upstream changes.
 
 :::::::::: callout
 
-The fewer modifications are made relative to official source material episodes, the easier maintenance will be when keeping content up-to-date.
+The fewer modifications made to the official lesson episodes, the easier it is to maintain your fork.
 
 ::::::::::::::::::
 
-### Cherry-picking modifications from your main branch 
+### Cherry-picking modifications from your main branch
+**Keeping commits focused** and **self-contained** makes it easier to select individual changes for upstream contributions. [**Cherry-picking**](https://git-scm.com/docs/git-cherry-pick) allows you to apply a specific commit from your customized `main` branch to a feature branch based on the upstream repository.
 
-If you **keep commits focused** and **self-contained** on a specific contribution, or individual steps towards a larger contribution, it is easier to pick individual changes to be part of your feature branch.
-The process of integrating a specific commit of your `main` branch into your feature branch is called [**cherry-picking**](https://git-scm.com/docs/git-cherry-pick).
-
-To cherry-pick a specific commit first take a look at you modifications to your `main` branch.
+To cherry-pick a specific commit first inspect at your modifications to your `main` branch.
 
 ```sh
-$ git switch `main`
+$ git switch main
 $ git log --oneline
 ```
+
+::: callout
+The following output can change from time-to-time.
+:::
+
 ```output
 a1b2c3d Update head-node information
 e4f516a Clarify ssh-key generation
 f748a9b Add snippet on module output
+...
 ```
 
-Let's assume the example above, the commit `e4f516a` stipulates a clarification worth contributing back to the upstream lesson material.
-To integrate this commit into a new feature branch first create this branch.
+Let's assume the example above, the commit `e4f516a` stipulates a clarification worth contributing back to the upstream lesson material. To integrate this commit into a feature branch, first create this branch.
 
 ```sh
-$ git switch `upstream-main`
-$ git branch clarify-ssh-key-gen
-$ git switch clarify-ssh-key-gen
+$ git switch upstream-main
+$ git switch --create clarify-ssh-key-gen
 ```
 
 Now you can cherry-pick the specific commit into your feature branch
@@ -109,13 +172,35 @@ $ git cherry-pick e4f516a
 ```
 
 :::::::: callout
-Double-check that your contribution is self-contained by building the lesson material from your feature branch. 
+Before cherry-picking, verify that the selected commit is self-contained and does not depend on other workshop-specific commits. If dependencies exist, include the required changes or prepare a separate self-contained commit.
+
+Double-check that your contribution is self-contained by building the lesson material from your feature branch.
 ::::::::::::::::
+
+### Submitting your contribution upstream
+Once you have cherry-picked the relevant commit and verified that the lesson builds successfully, push your feature branch to your fork:
+
+```sh
+$ git push -u origin clarify-ssh-key-gen
+```
+
+You can now create a pull request on GitHub to propose merging your changes into the official HPC Carpentry repository.
+
+When creating the pull request, ensure that:
+
+- The base repository is `hpc-carpentry/hpc-intro`
+- The base branch is `main`
+- The head repository is your fork
+- The compare branch is `clarify-ssh-key-gen`
+
+The upstream maintainers can review your proposed changes and decide whether to
+merge them.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - When using cloud-based resources with Magic Castle installation, there is no need to fork materials.
-- Fork if you wish or require customizations.
-- Customizations can only be configured per specific site; different customizations necessitate separate forks.
+- Fork the lesson repository when workshop-specific customizations are required.
+- Use upstream-based feature branches to prepare and submit improvements through GitHub pull requests.
+- Keep customizations minimal to simplify maintenance and synchronization with upstream.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
