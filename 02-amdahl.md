@@ -44,7 +44,7 @@ program. It assumes that only some fraction of the code can be
 parallelized perfectly (the "parallel part"), and that a fixed
 fraction of the code is intrinsically serial. In real-world codes,
 the serial part might involve problem set-up or tear-down, or
-data aggregation steps that integrate the resulsts of the 
+data aggregation steps that integrate the results of the 
 parallel tasks.
 
 ![Plot illustrating Amdahl's Law. [Image source](https://commons.wikimedia.org/wiki/File:AmdahlsLaw.svg), created by [Daniels220](https://en.wikipedia.org/wiki/User:Daniels220). (Licensed CC-BY-SA.)](https://upload.wikimedia.org/wikipedia/commons/e/ea/AmdahlsLaw.svg){
